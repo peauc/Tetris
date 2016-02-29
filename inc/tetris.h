@@ -5,14 +5,30 @@
 ** Login   <thoma_c@epitech.net>
 **
 ** Started on  Wed Feb 24 15:30:55 2016 Clement Thomas
-** Last update Wed Feb 24 16:49:40 2016 Clement Thomas
+** Last update Mon Feb 29 20:18:13 2016 Clement Peau
 */
 
 #ifndef TETRIS_H_
-# define TETRIS_H_
 
+# define TETRIS_H_
+# define PUTERROR(x)	write(2, x, my_strlen(x))
+
+/*
+**SYSTEM LIBS
+*/
 #include <ncurses.h>
 #include <stdlib.h>
+#include <unistd.h>
+
+/*
+**PERSONNAL HEADERS
+*/
+#include "parsing.h"
+
+/*
+**UTILS
+*/
+int	my_strlen(char *);
 
 void	aff_tetris(int, SCREEN *);
 

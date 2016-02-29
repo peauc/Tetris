@@ -5,7 +5,7 @@
 ** Login   <thoma_c@epitech.net>
 **
 ** Started on  Wed Feb 24 15:30:25 2016 Clement Thomas
-** Last update Wed Feb 24 17:27:50 2016 Clement Thomas
+** Last update Mon Feb 29 21:05:30 2016 Clement Peau
 */
 
 #include "tetris.h"
@@ -52,6 +52,8 @@ void	aff_tetris(int ch, SCREEN *new)
 
 int		main(int argc, char **argv)
 {
+  printf("REMETRE LE WERROR AVANT DE PUSH\n");
+
   SCREEN	*new;
 
   argc = argc;
@@ -59,5 +61,6 @@ int		main(int argc, char **argv)
   new = newterm(NULL, stderr, stdin);
   new = set_term(new);
   aff_tetris(0, new);
+  /* parsing(); */
   return (0);
 }
