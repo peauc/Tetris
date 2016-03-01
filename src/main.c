@@ -5,7 +5,7 @@
 ** Login   <thoma_c@epitech.net>
 **
 ** Started on  Wed Feb 24 15:30:25 2016 Clement Thomas
-** Last update Mon Feb 29 21:05:30 2016 Clement Peau
+** Last update Tue Mar  1 00:52:24 2016 Clement Peau
 */
 
 #include "tetris.h"
@@ -53,14 +53,16 @@ void	aff_tetris(int ch, SCREEN *new)
 int		main(int argc, char **argv)
 {
   printf("REMETRE LE WERROR AVANT DE PUSH\n");
-
+  WINDOW	*win; // toute la fenetre -> terminal initialise;
   SCREEN	*new;
 
+		      //refresh(), cree la FPS (cedric qui a dit lol);
+		      //clear() efface l'ecran;
   argc = argc;
   argv = argv;
   new = newterm(NULL, stderr, stdin);
   new = set_term(new);
   aff_tetris(0, new);
-  /* parsing(); */
+  parsing();
   return (0);
 }

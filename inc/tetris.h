@@ -5,7 +5,7 @@
 ** Login   <thoma_c@epitech.net>
 **
 ** Started on  Wed Feb 24 15:30:55 2016 Clement Thomas
-** Last update Mon Feb 29 20:18:13 2016 Clement Peau
+** Last update Mon Feb 29 22:23:46 2016 Clement Peau
 */
 
 #ifndef TETRIS_H_
@@ -24,6 +24,7 @@
 **PERSONNAL HEADERS
 */
 #include "parsing.h"
+#include "linked_list.h"
 
 /*
 **UTILS

@@ -5,13 +5,15 @@
 ## Login   <peau_c@epitech.net>
 ##
 ## Started on  Mon Jan 18 14:44:16 2016 Clement Peau
-## Last update Mon Feb 29 20:34:58 2016 Clement Peau
+## Last update Tue Mar  1 14:35:24 2016 Clement Peau
 ##
 
 SRC	=	src/main.c		\
 		src/parsing.c		\
 		src/lib/my_strlen.c	\
 		src/lib/my_strcat.c	\
+		src/linked_list/create.c\
+
 
 OBJ	=	 $(SRC:.c=.o)
 

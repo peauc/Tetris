@@ -5,7 +5,7 @@
 ** Login   <peau_c@epitech.net>
 **
 ** Started on  Mon Feb 29 18:47:52 2016 Clement Peau
-** Last update Mon Feb 29 20:49:31 2016 Clement Peau
+** Last update Tue Mar  1 14:37:46 2016 Clement Peau
 */
 
 #include "tetris.h"
@@ -15,7 +15,10 @@ int	export_files()
   struct dirent	*dirent;
   DIR		*dirp;
   char		*str;
+  t_tetriminos	*tetriminos;
 
+  if ((tetriminos = create()) == NULL)
+    return (1);
   if ((dirp = opendir("./tetriminos")) == NULL)
     {
       PUTERROR("Couldn't open ./tetriminos\n");
@@ -23,10 +26,8 @@ int	export_files()
     }
   while ((dirent = readdir(dirp)) != NULL && dirent->d_name[0] != '.')
     {
-      printf("%s\n", dirent->d_name);
       if ((str = my_strcat_name("./tetriminos/", dirent->d_name)) == NULL)
 	return (1);
-      printf("str = %s\n", str);
     }
   return (0);
 }
