@@ -5,7 +5,7 @@
 ## Login   <peau_c@epitech.net>
 ##
 ## Started on  Mon Jan 18 14:44:16 2016 Clement Peau
-## Last update Tue Mar  1 18:45:20 2016 Clement Peau
+## Last update Tue Mar  1 20:25:37 2016 Clement Thomas
 ##
 
 SRC	=	src/main.c			\
@@ -16,13 +16,14 @@ SRC	=	src/main.c			\
 		src/lib/my_strlen.c		\
 		src/lib/my_strcat.c		\
 		src/linked_list/create.c	\
+		src/aff.c
 
 
 OBJ	=	 $(SRC:.c=.o)
 
 NAME	= 	tetris
 
-CC	= 	clang -I./inc
+CC	= 	gcc -I./inc
 
 CFLAGS	= 	-W -Wall -Wextra  # -Werror
 
