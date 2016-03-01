@@ -5,7 +5,7 @@
 ** Login   <thoma_c@epitech.net>
 **
 ** Started on  Wed Feb 24 15:30:55 2016 Clement Thomas
-** Last update Mon Feb 29 22:23:46 2016 Clement Peau
+** Last update Tue Mar  1 15:16:01 2016 Clement Peau
 */
 
 #ifndef TETRIS_H_
@@ -23,13 +23,18 @@
 /*
 **PERSONNAL HEADERS
 */
-#include "parsing.h"
 #include "linked_list.h"
+#include "parsing.h"
 
 /*
 **UTILS
 */
 int	my_strlen(char *);
+
+/*
+**ERRORS
+*/
+int	error_int(char *, int);
 
 void	aff_tetris(int, SCREEN *);
 

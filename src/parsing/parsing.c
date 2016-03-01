@@ -5,7 +5,7 @@
 ** Login   <peau_c@epitech.net>
 **
 ** Started on  Mon Feb 29 18:47:52 2016 Clement Peau
-** Last update Tue Mar  1 14:37:46 2016 Clement Peau
+** Last update Tue Mar  1 18:42:41 2016 Clement Peau
 */
 
 #include "tetris.h"
@@ -20,14 +20,12 @@ int	export_files()
   if ((tetriminos = create()) == NULL)
     return (1);
   if ((dirp = opendir("./tetriminos")) == NULL)
-    {
-      PUTERROR("Couldn't open ./tetriminos\n");
-      return (1);
-    }
+    error_int("Error can't find tetriminos folder", 1);
   while ((dirent = readdir(dirp)) != NULL && dirent->d_name[0] != '.')
     {
       if ((str = my_strcat_name("./tetriminos/", dirent->d_name)) == NULL)
 	return (1);
+      add_infos_to_list(tetriminos, str);
     }
   return (0);
 }

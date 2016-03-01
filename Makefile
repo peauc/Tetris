@@ -1,25 +1,28 @@
 ##
-## Makefile for tekdoom in /home/peau_c/Igraph/tekdoom
+## Makefile for make in /home/peau_c/#HIDDEN#
 ##
 ## Made by Poc
 ## Login   <peau_c@epitech.net>
 ##
 ## Started on  Mon Jan 18 14:44:16 2016 Clement Peau
-## Last update Tue Mar  1 14:35:24 2016 Clement Peau
+## Last update Tue Mar  1 18:45:20 2016 Clement Peau
 ##
 
-SRC	=	src/main.c		\
-		src/parsing.c		\
-		src/lib/my_strlen.c	\
-		src/lib/my_strcat.c	\
-		src/linked_list/create.c\
+SRC	=	src/main.c			\
+		src/error.c			\
+		src/parsing/parsing.c		\
+		src/parsing/add_info_to_list.c	\
+		src/lib/get_next_line.c		\
+		src/lib/my_strlen.c		\
+		src/lib/my_strcat.c		\
+		src/linked_list/create.c	\
 
 
 OBJ	=	 $(SRC:.c=.o)
 
 NAME	= 	tetris
 
-CC	= 	gcc -I./inc
+CC	= 	clang -I./inc
 
 CFLAGS	= 	-W -Wall -Wextra  # -Werror
 
@@ -36,3 +39,7 @@ fclean:		clean
 		rm -f $(NAME)
 
 re:		fclean all
+
+.c.o:
+		@$(CC) -c $< -o $@
+		@echo -e "[OK] > $<\t\t"
