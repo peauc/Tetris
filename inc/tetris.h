@@ -5,14 +5,14 @@
 ** Login   <thoma_c@epitech.net>
 **
 ** Started on  Wed Feb 24 15:30:55 2016 Clement Thomas
-** Last update Tue Mar  1 15:16:01 2016 Clement Peau
+** Last update Wed Mar  2 18:25:10 2016 Clement Peau
 */
 
 #ifndef TETRIS_H_
 
 # define TETRIS_H_
 # define PUTERROR(x)	write(2, x, my_strlen(x))
-
+# define PUTSTR(x)	write(1, x, my_strlen(x))
 /*
 **SYSTEM LIBS
 */
@@ -30,6 +30,7 @@
 **UTILS
 */
 int	my_strlen(char *);
+int	getnbr(char *);
 
 /*
 **ERRORS

@@ -5,7 +5,7 @@
 ** Login   <thoma_c@epitech.net>
 **
 ** Started on  Wed Feb 24 15:30:25 2016 Clement Thomas
-** Last update Tue Mar  1 00:52:24 2016 Clement Peau
+** Last update Wed Mar  2 13:13:03 2016 Clement Peau
 */
 
 #include "tetris.h"
@@ -52,7 +52,7 @@ void	aff_tetris(int ch, SCREEN *new)
 
 int		main(int argc, char **argv)
 {
-  printf("REMETRE LE WERROR AVANT DE PUSH\n");
+  printf("REMETRE LE WERROR AVANT DE PUSH ET LE TETRIS\n");
   WINDOW	*win; // toute la fenetre -> terminal initialise;
   SCREEN	*new;
 
@@ -60,9 +60,9 @@ int		main(int argc, char **argv)
 		      //clear() efface l'ecran;
   argc = argc;
   argv = argv;
-  new = newterm(NULL, stderr, stdin);
-  new = set_term(new);
-  aff_tetris(0, new);
+  /* new = newterm(NULL, stderr, stdin); */
+  /* new = set_term(new); */
+  /* /\* aff_tetris(0, new); *\/ */
   parsing();
   return (0);
 }
