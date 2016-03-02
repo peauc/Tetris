@@ -5,7 +5,7 @@
 ** Login   <thoma_c@epitech.net>
 **
 ** Started on  Wed Feb 24 15:30:55 2016 Clement Thomas
-** Last update Wed Mar  2 18:25:10 2016 Clement Peau
+** Last update Wed Mar  2 20:23:33 2016 Clement Peau
 */
 
 #ifndef TETRIS_H_
@@ -25,6 +25,7 @@
 */
 #include "linked_list.h"
 #include "parsing.h"
+#include "aff.h"
 
 /*
 **UTILS
@@ -36,7 +37,6 @@ int	getnbr(char *);
 **ERRORS
 */
 int	error_int(char *, int);
-
-void	aff_tetris(int, SCREEN *);
+void	aff_tetris(int, SCREEN *, t_board *, WINDOW *);
 
 #endif /* !TETRIS_H_ */

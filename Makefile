@@ -5,7 +5,7 @@
 ## Login   <peau_c@epitech.net>
 ##
 ## Started on  Mon Jan 18 14:44:16 2016 Clement Peau
-## Last update Wed Mar  2 18:37:24 2016 Clement Peau
+## Last update Wed Mar  2 20:13:35 2016 Clement Peau
 ##
 
 SRC	=	src/main.c			\
@@ -20,6 +20,8 @@ SRC	=	src/main.c			\
 		src/lib/my_strlen.c		\
 		src/lib/my_strcat.c		\
 		src/linked_list/create.c	\
+		src/aff.c			\
+		src/aff_game.c
 
 
 OBJ	=	 $(SRC:.c=.o)
