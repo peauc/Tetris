@@ -5,7 +5,7 @@
 ** Login   <thoma_c@epitech.net>
 **
 ** Started on  Tue Mar  1 23:01:35 2016 Clement Thomas
-** Last update Wed Mar  2 20:15:56 2016 Clement Thomas
+** Last update Wed Mar  2 20:19:08 2016 Clement Thomas
 */
 
 #include "tetris.h"
@@ -23,7 +23,7 @@ void	aff_game(WINDOW *origin)
 {
   WINDOW *new_win;
 
-  new_win = subwin(origin, 12, 23, 1, 47);
+  new_win = subwin(origin, 22, 12, 0, 35);
   wborder(new_win, '|', '|', '-', '-', '/', '\\', '\\', '/');
   next_tetri(origin);
 }
