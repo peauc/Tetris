@@ -5,21 +5,25 @@
 ** Login   <thoma_c@epitech.net>
 **
 ** Started on  Tue Mar  1 23:01:35 2016 Clement Thomas
-** Last update Tue Mar  1 23:41:41 2016 Clement Thomas
+** Last update Wed Mar  2 20:11:17 2016 Clement Thomas
 */
 
 #include "tetris.h"
 
-void	next_tetri()
+void	next_tetri(WINDOW *origin)
 {
-  mvprintw(0, 48, "/Next--\\");
-  mvprintw(1, 48, "|      |");
-  mvprintw(2, 48, "|      |");
-  mvprintw(3, 48, "\\------/");
+  WINDOW *new_win;
+
+  new_win = subwin(origin, 4, 9, 1, 48);
+  wborder(new_win, '|', '|', '-', '-', '/', '\\', '\\', '/');
+  mvwprintw(new_win, 0, 1, "Next");
 }
 
-void	aff_game()
+void	aff_game(WINDOW *origin)
 {
+  WINDOW *new_window;
+
+  new_win = subwin(origin, 4, 9, 1, 47);
   mvprintw(0, 35, "------------");
   mvprintw(1, 35, "|          |");
   mvprintw(2, 35, "|          |");
@@ -42,5 +46,5 @@ void	aff_game()
   mvprintw(19, 35, "|          |");
   mvprintw(20, 35, "|          |");
   mvprintw(21, 35, "------------");
-  next_tetri();
+  next_tetri(origin);
 }
