@@ -5,7 +5,7 @@
 ## Login   <peau_c@epitech.net>
 ##
 ## Started on  Mon Jan 18 14:44:16 2016 Clement Peau
-## Last update Wed Mar  2 20:28:08 2016 Clement Peau
+## Last update Thu Mar  3 11:04:48 2016 Clement Peau
 ##
 
 SRC	=	src/main.c			\
@@ -14,6 +14,8 @@ SRC	=	src/main.c			\
 		src/parsing/add_info_to_list.c	\
 		src/parsing/get_infos.c		\
 		src/parsing/get_tetriminos.c	\
+		src/parsing/get_lenght_of_file.c\
+		src/parsing/check_name.c	\
 		src/lib/show_tab.c		\
 		src/lib/my_getnbr.c		\
 		src/lib/get_next_line.c		\
