@@ -5,7 +5,7 @@
 ## Login   <peau_c@epitech.net>
 ##
 ## Started on  Mon Jan 18 14:44:16 2016 Clement Peau
-## Last update Thu Mar  3 14:06:03 2016 Clement Peau
+## Last update Thu Mar  3 14:30:52 2016 Clement Peau
 ##
 
 SRC	=	src/main.c					\
@@ -17,6 +17,7 @@ SRC	=	src/main.c					\
 		src/parsing/get_lenght_of_file.c		\
 		src/parsing/check_name.c			\
 		src/parsing/get_name.c				\
+		src/lib/show_list.c				\
 		src/lib/my_strcmp.c				\
 		src/lib/show_tab.c				\
 		src/lib/my_getnbr.c				\
@@ -53,5 +54,7 @@ fclean:		clean
 re:		fclean all
 
 .c.o:
-		@$(CC) -c $< -o $@
-		@echo -e "[OK] > $<\t\t"
+		@ $(CC) -c $< -o $@
+		@ tput setaf 5
+		@ echo -e "[OK] > $<\t\t"
+		@ tput setaf 0

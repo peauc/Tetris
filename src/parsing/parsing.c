@@ -5,7 +5,7 @@
 ** Login   <peau_c@epitech.net>
 **
 ** Started on  Mon Feb 29 18:47:52 2016 Clement Peau
-** Last update Wed Mar  2 20:44:10 2016 Clement Peau
+** Last update Thu Mar  3 15:23:37 2016 Clement Peau
 */
 
 #include "tetris.h"
@@ -29,6 +29,7 @@ int	export_files()
 	  	return (1);
 	  add_infos_to_list(tetriminos, str);
 	}
+  show_list(tetriminos);
   return (0);
 }
 
