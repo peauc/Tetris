@@ -1,28 +1,31 @@
 ##
-	## Makefile for make in /home/peau_c/#HIDDEN#
+## Makefile for make in /home/peau_c/#HIDDEN#
 ##
 ## Made by Poc
 ## Login   <peau_c@epitech.net>
 ##
 ## Started on  Mon Jan 18 14:44:16 2016 Clement Peau
-## Last update Thu Mar  3 12:09:50 2016 Clement Peau
+## Last update Thu Mar  3 13:41:20 2016 Clement Peau
 ##
 
-SRC	=	src/main.c			\
-		src/error.c			\
-		src/parsing/parsing.c		\
-		src/parsing/add_info_to_list.c	\
-		src/parsing/get_infos.c		\
-		src/parsing/get_tetriminos.c	\
-		src/parsing/get_lenght_of_file.c\
-		src/parsing/check_name.c	\
-		src/lib/show_tab.c		\
-		src/lib/my_getnbr.c		\
-		src/lib/get_next_line.c		\
-		src/lib/my_strlen.c		\
-		src/lib/my_strcat.c		\
-		src/linked_list/create.c	\
-		src/aff.c			\
+SRC	=	src/main.c					\
+		src/error.c					\
+		src/parsing/parsing.c				\
+		src/parsing/add_info_to_list.c			\
+		src/parsing/get_infos.c				\
+		src/parsing/get_tetriminos.c			\
+		src/parsing/get_lenght_of_file.c		\
+		src/parsing/check_name.c			\
+		src/parsing/get_name.c				\
+		src/lib/my_strcmp.c				\
+		src/lib/show_tab.c				\
+		src/lib/my_getnbr.c				\
+		src/lib/get_next_line.c				\
+		src/lib/my_strlen.c				\
+		src/lib/my_strcat.c				\
+		src/linked_list/add_in_alphanumerical_order.c	\
+		src/linked_list/create.c			\
+		src/aff.c					\
 		src/aff_game.c
 
 
