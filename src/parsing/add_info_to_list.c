@@ -5,7 +5,7 @@
 ** Login   <peau_c@epitech.net>
 **
 ** Started on  Tue Mar  1 14:52:20 2016 Clement Peau
-** Last update Thu Mar  3 13:09:05 2016 Clement Peau
+** Last update Thu Mar  3 14:06:35 2016 Clement Peau
 */
 
 #include "linked_list.h"
@@ -28,6 +28,6 @@ int	add_infos_to_list(t_tetriminos *list, char *relative_path)
   link->tetriminos = get_tetriminos(fd, link->size[1]);
   close (fd);
   check_size_error(link, relative_path);
-  add_in_alphanumericl_order(list, link);
+  add_in_alphanumerical_order(list, link);
   return (0);
 }

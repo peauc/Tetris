@@ -5,7 +5,7 @@
 ## Login   <peau_c@epitech.net>
 ##
 ## Started on  Mon Jan 18 14:44:16 2016 Clement Peau
-## Last update Thu Mar  3 13:41:20 2016 Clement Peau
+## Last update Thu Mar  3 14:06:03 2016 Clement Peau
 ##
 
 SRC	=	src/main.c					\
