@@ -5,7 +5,7 @@
 ** Login   <thoma_c@epitech.net>
 **
 ** Started on  Wed Feb 24 15:30:25 2016 Clement Thomas
-** Last update Thu Mar  3 09:55:06 2016 Clement Peau
+** Last update Thu Mar  3 18:28:47 2016 Clement Thomas
 */
 
 #include "tetris.h"
@@ -66,7 +66,7 @@ void	aff_logo_next()
   mvprintw(4, 18, " ***");
 }
 
-WINDOW	*aff_board(t_board *board, WINDOW *origin)
+WINDOW	*aff_board(t_board *board, WINDOW *origin, double tmp)
 {
   WINDOW *new_win;
 
@@ -81,22 +81,29 @@ WINDOW	*aff_board(t_board *board, WINDOW *origin)
   mvwprintw(new_win, 6, 1, " Level");
   mvwprintw(new_win, 6, 17, "%d", board->level);
   mvwprintw(new_win, 8, 1, " Timer:");
-  mvwprintw(new_win, 8, 17, "%d", board->timer);
+  /* mvwprintw(new_win, 8, 17, "%d", board->timer); */
   wrefresh(new_win);
-  return (new_win);
 }
-void	aff_tetris(int ch, SCREEN *new, t_board *board, WINDOW *origin)
+
+void		aff_tetris(int ch, SCREEN *new, t_board *board, WINDOW *origin)
 {
+  double	tmp;
+
+  tmp = time(NULL);
   keypad(stdscr, TRUE);
   curs_set(FALSE);
   noecho();
   start_color();
   aff_logo_next();
-  aff_board(board, origin);
   aff_game(origin);
+  aff_board(board, origin, tmp);
   refresh();
   while ((ch = getch()) != 27)
     {
+
+      timer(tmp, origin);
+      wrefresh(origin);
+      clear;
     }
   endwin();
   delscreen(new);
