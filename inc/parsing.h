@@ -5,7 +5,7 @@
 ** Login   <peau_c@epitech.net>
 **
 ** Started on  Mon Feb 29 19:30:53 2016 Clement Peau
-** Last update Wed Mar  2 18:22:29 2016 Clement Peau
+** Last update Thu Mar  3 09:53:19 2016 Clement Peau
 */
 
 #ifndef _PARSING_H_
@@ -30,9 +30,10 @@ typedef struct s_tetriminos t_tetriminos;
 /*
 **PARSING
 */
-int	parsing();
-int	export_files();
 int	add_infos_to_list(t_tetriminos *, char *);
+int	export_files();
+int	get_first_line(t_tetriminos *, char *);
+int	parsing();
 char	*get_next_line(const int);
 char	*my_strcat_name(char *, char *);
 char	**get_tetriminos(int , int);
