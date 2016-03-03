@@ -5,7 +5,7 @@
 ** Login   <thoma_c@epitech.net>
 **
 ** Started on  Wed Feb 24 15:30:25 2016 Clement Thomas
-** Last update Wed Mar  2 20:14:41 2016 Clement Peau
+** Last update Wed Mar  2 20:26:47 2016 Clement Peau
 */
 
 #include "tetris.h"
@@ -19,13 +19,13 @@ int		main(int argc, char **argv)
 
 		      //refresh(), cree la FPS (cedric qui a dit lol);
 		      //clear() efface l'ecran;
-  argc = argc;
-  argv = argv;
-  new = newterm(NULL, stderr, stdin);
-  new = set_term(new);
-  win = initscr();
-  data_board_initialize(&board);
-  aff_tetris(0, new, &board, win);
+  /* argc = argc; */
+  /* argv = argv; */
+  /* new = newterm(NULL, stderr, stdin); */
+  /* new = set_term(new); */
+  /* win = initscr(); */
+  /* data_board_initialize(&board); */
+  /* aff_tetris(0, new, &board, win); */
   parsing();
   return (0);
 }

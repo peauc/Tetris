@@ -5,7 +5,7 @@
 ** Login   <peau_c@epitech.net>
 **
 ** Started on  Tue Mar  1 15:48:51 2016 Clement Peau
-** Last update Wed Mar  2 19:31:56 2016 Clement Peau
+** Last update Wed Mar  2 20:40:30 2016 Clement Peau
 */
 
 #include "tetris.h"
@@ -36,6 +36,7 @@ char		*get_next_line(const int fd)
   if ((str = malloc((2) * sizeof(char))) == NULL ||
       (buff = malloc((2) * sizeof(char))) == NULL)
     return (NULL);
+  buff[0] = 0;
   while ((readed = read(fd, str, 1)) > 0)
     {
       buff[i] = str[0];
@@ -48,5 +49,8 @@ char		*get_next_line(const int fd)
       buff = my_realloc(buff, 1);
       i++;
     }
-  return (NULL);
+  if (buff[0] == 0)
+    return (NULL);
+  else
+    return (buff);
 }

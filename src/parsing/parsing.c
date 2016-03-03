@@ -5,7 +5,7 @@
 ** Login   <peau_c@epitech.net>
 **
 ** Started on  Mon Feb 29 18:47:52 2016 Clement Peau
-** Last update Wed Mar  2 19:19:47 2016 Clement Peau
+** Last update Wed Mar  2 20:44:10 2016 Clement Peau
 */
 
 #include "tetris.h"
@@ -27,7 +27,6 @@ int	export_files()
 	  printf("%s\n", dirent->d_name);
 	  if ((str = my_strcat_name("tetriminos/", dirent->d_name)) == NULL)
 	  	return (1);
-	  printf("%s strcat = %s\n", __FILE__, str);
 	  add_infos_to_list(tetriminos, str);
 	}
   return (0);
