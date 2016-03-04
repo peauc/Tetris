@@ -5,7 +5,7 @@
 ** Login   <thoma_c@epitech.net>
 **
 ** Started on  Wed Feb 24 15:30:55 2016 Clement Thomas
-** Last update Fri Mar  4 13:01:32 2016 Clement Peau
+** Last update Fri Mar  4 15:28:57 2016 Clement Peau
 */
 
 #ifndef TETRIS_H_
@@ -28,6 +28,7 @@
 # include "parsing.h"
 # include "aff.h"
 # include "options.h"
+# include "printf.h"
 
 /*
 **UTILS

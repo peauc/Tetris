@@ -1,11 +1,11 @@
 /*
-** add_in_alphanumerical_order.c for addin in /home/peau_c/rendu/PSU/PSU_2015_tetris
+** add_in_alphanumerical_order.c for addin in /hom
 **
 ** Made by Clement Peau
 ** Login   <peau_c@epitech.net>
 **
 ** Started on  Thu Mar  3 13:19:19 2016 Clement Peau
-** Last update Thu Mar  3 19:37:27 2016 Clement Peau
+** Last update Fri Mar  4 15:41:49 2016 Clement Peau
 */
 
 #include "linked_list.h"

@@ -5,7 +5,7 @@
 ** Login   <peau_c@epitech.net>
 **
 ** Started on  Tue Mar  1 14:52:20 2016 Clement Peau
-** Last update Thu Mar  3 14:06:35 2016 Clement Peau
+** Last update Fri Mar  4 15:48:21 2016 Clement Peau
 */
 
 #include "linked_list.h"

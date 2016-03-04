@@ -5,7 +5,7 @@
 ** Login   <peau_c@epitech.net>
 **
 ** Started on  Thu Nov  5 22:54:01 2015 clement peau
-** Last update Fri Mar  4 15:21:09 2016 Clement Peau
+** Last update Fri Mar  4 15:44:22 2016 Clement Peau
 */
 
 #include "printf.h"
@@ -30,11 +30,6 @@ void	my_put_cent(va_list ap, int *i)
 
 void	my_putnbr_rec(int nb, int *i)
 {
-  if (nb == -2147483648)
-    {
-      my_putstr("-2147483648", i);
-      return ;
-    }
   if (nb < 0)
     {
       my_putchar('-', i);

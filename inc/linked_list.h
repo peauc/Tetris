@@ -5,7 +5,7 @@
 ** Login   <peau_c@epitech.net>
 **
 ** Started on  Mon Feb 29 21:10:02 2016 Clement Peau
-** Last update Thu Mar  3 18:49:46 2016 Clement Peau
+** Last update Fri Mar  4 15:29:35 2016 Clement Peau
  */
 
 #ifndef _LINKED_LIST_H_
@@ -28,6 +28,7 @@ typedef struct	s_tetriminos
   int			is_error;
 }		t_tetriminos;
 
+int		get_lenght_of_list(t_tetriminos *);
 t_tetriminos	*create();
 void		add_in_alphanumerical_order(t_tetriminos *, t_tetriminos *);
 void		show_list(t_tetriminos *);
