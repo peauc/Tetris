@@ -5,7 +5,7 @@
 ## Login   <peau_c@epitech.net>
 ##
 ## Started on  Mon Jan 18 14:44:16 2016 Clement Peau
-## Last update Fri Mar  4 14:07:07 2016 Clement Peau
+## Last update Fri Mar  4 15:22:43 2016 Clement Peau
 ##
 
 SRC	=	src/main.c					\
@@ -65,6 +65,7 @@ clean:
 
 fclean:		clean
 		rm -f $(NAME)
+		rm -f libprintf.a
 
 re:		fclean all
 
