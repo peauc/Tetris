@@ -5,16 +5,17 @@
 ** Login   <peau_c@epitech.net>
 **
 ** Started on  Thu Mar  3 13:19:19 2016 Clement Peau
-** Last update Thu Mar  3 16:12:41 2016 Clement Peau
+** Last update Thu Mar  3 19:37:27 2016 Clement Peau
 */
 
 #include "linked_list.h"
+#include "string.h"
 
 void	add_in_alphanumerical_order(t_tetriminos *list, t_tetriminos *link)
 {
   t_tetriminos	*tmp;
 
-  tmp = list->next;
+  tmp = list;
   if (list->next == NULL)
     {
       link->next = list->next;
@@ -22,9 +23,8 @@ void	add_in_alphanumerical_order(t_tetriminos *list, t_tetriminos *link)
     }
   else
     {
-      printf("strcmp %s %s = %d vs %d\n", tmp->name, link->name, my_strcmp(tmp->name, link->name), my_strcmp(tmp->name, link->name));
-      while (my_strcmp(link->name, tmp->name) < 0 && (link->next != NULL))
-	tmp = tmp->next;
+       while ((tmp->next != NULL) && my_strcmp(link->name, tmp->next->name) < 0)
+	  tmp = tmp->next;
       link->next = tmp->next;
       tmp->next  = link;
     }

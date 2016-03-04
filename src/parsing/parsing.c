@@ -5,12 +5,12 @@
 ** Login   <peau_c@epitech.net>
 **
 ** Started on  Mon Feb 29 18:47:52 2016 Clement Peau
-** Last update Thu Mar  3 15:23:37 2016 Clement Peau
+** Last update Fri Mar  4 12:57:33 2016 Clement Peau
 */
 
 #include "tetris.h"
 
-int	export_files()
+t_tetriminos	*export_files()
 {
   struct dirent	*dirent;
   DIR		*dirp;
@@ -18,7 +18,7 @@ int	export_files()
   t_tetriminos	*tetriminos;
 
   if ((tetriminos = create()) == NULL)
-    return (1);
+    return (NULL);
   if ((dirp = opendir("./tetriminos")) == NULL)
     error_int("Error can't find tetriminos folder", 1);
   while ((dirent = readdir(dirp)) != NULL)
@@ -26,16 +26,18 @@ int	export_files()
 	{
 	  printf("%s\n", dirent->d_name);
 	  if ((str = my_strcat_name("tetriminos/", dirent->d_name)) == NULL)
-	  	return (1);
+	  	return (NULL);
 	  add_infos_to_list(tetriminos, str);
 	}
   show_list(tetriminos);
-  return (0);
+  return (tetriminos);
 }
 
-int	parsing()
+t_tetriminos	*parsing()
 {
-  if (export_files() == 1)
-    return (1);
-  return (0);
+  t_tetriminos	*list;
+
+  if ((list = export_files()) == NULL)
+    return (NULL);
+  return (list);
 }

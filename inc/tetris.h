@@ -5,7 +5,7 @@
 ** Login   <thoma_c@epitech.net>
 **
 ** Started on  Wed Feb 24 15:30:55 2016 Clement Thomas
-** Last update Thu Mar  3 18:34:48 2016 Clement Peau
+** Last update Fri Mar  4 13:01:32 2016 Clement Peau
 */
 
 #ifndef TETRIS_H_
@@ -16,17 +16,18 @@
 /*
 **SYSTEM LIBS
 */
-#include <ncurses.h>
-#include <stdlib.h>
-#include <unistd.h>
-#include <time.h>
+# include <ncurses.h>
+# include <stdlib.h>
+# include <unistd.h>
+# include <time.h>
 
 /*
 **PERSONNAL HEADERS
 */
-#include "linked_list.h"
-#include "parsing.h"
-#include "aff.h"
+# include "linked_list.h"
+# include "parsing.h"
+# include "aff.h"
+# include "options.h"
 
 /*
 **UTILS

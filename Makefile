@@ -5,11 +5,13 @@
 ## Login   <peau_c@epitech.net>
 ##
 ## Started on  Mon Jan 18 14:44:16 2016 Clement Peau
-## Last update Thu Mar  3 14:30:52 2016 Clement Peau
+## Last update Fri Mar  4 12:54:25 2016 Clement Peau
 ##
 
 SRC	=	src/main.c					\
 		src/error.c					\
+		src/option/debug_mode.c				\
+		src/option/options.c				\
 		src/parsing/parsing.c				\
 		src/parsing/add_info_to_list.c			\
 		src/parsing/get_infos.c				\
@@ -41,7 +43,7 @@ CFLAGS	= 	-W  -Wall -Wextra  # -Werror
 $(NAME): 	$(OBJ)
 		@ gcc $(OBJ) -o $(NAME) -lncurses
 		@ echo -e "\033[1;32m \t \t \t ♩♪♫ TETRIS\033[0;32m®\033[1;32m Compiled Sucesfully ♩♪♫\033[0m "
-		#@ aplay .tetris.wav
+		#@ aplay .tetris.wav &
 
 all:		$(NAME)
 
@@ -57,4 +59,4 @@ re:		fclean all
 		@ $(CC) -c $< -o $@
 		@ tput setaf 5
 		@ echo -e "[OK] > $<\t\t"
-		@ tput setaf 0
+		@ tput setaf 7
