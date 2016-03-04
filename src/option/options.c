@@ -5,13 +5,16 @@
 ** Login   <peau_c@epitech.net>
 **
 ** Started on  Fri Mar  4 12:31:47 2016 Clement Peau
-** Last update Fri Mar  4 13:05:45 2016 Clement Peau
+** Last update Fri Mar  4 19:20:48 2016 Clement Peau
 */
 
 #include "tetris.h"
 
-int	options(t_tetriminos *list)
+char	**options(t_tetriminos *list, char **av)
 {
+  char **keys;
+
+  initialize_keys(keys);
   debug_mode(list);
-  return (0);
+  return (keys);
 }

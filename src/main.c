@@ -5,7 +5,7 @@
 ** Login   <thoma_c@epitech.net>
 **
 ** Started on  Wed Feb 24 15:30:25 2016 Clement Thomas
-** Last update Fri Mar  4 12:25:31 2016 Clement Peau
+** Last update Fri Mar  4 19:10:41 2016 Clement Peau
 */
 
 #include "tetris.h"
@@ -14,13 +14,14 @@ int		main(int argc, char **argv)
 {
   printf("REMETRE LE WERROR AVANT DE PUSH ET LE TETRIS\n");
   t_tetriminos	*list;
+  char		**keys;
   /* WINDOW	*win; */
   /* SCREEN	*new; */
   /* t_board	board; */
 
 
   list = parsing();
-  options(list);
+  keys = options(list, argv);
   /* argc = argc; */
   /* argv = argv; */
   /* new = newterm(NULL, stderr, stdin); */

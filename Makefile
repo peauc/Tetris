@@ -5,7 +5,7 @@
 ## Login   <peau_c@epitech.net>
 ##
 ## Started on  Mon Jan 18 14:44:16 2016 Clement Peau
-## Last update Fri Mar  4 15:32:10 2016 Clement Thomas
+## Last update Fri Mar  4 19:32:26 2016 Clement Peau
 ##
 
 SRC	=	src/main.c					\
@@ -13,6 +13,8 @@ SRC	=	src/main.c					\
 		src/option/debug_mode.c				\
 		src/option/options.c				\
 		src/option/aff_tetri.c				\
+		src/option/aff_keys.c				\
+		src/option/initialize_keys.c			\
 		src/parsing/parsing.c				\
 		src/parsing/add_info_to_list.c			\
 		src/parsing/get_infos.c				\
@@ -20,6 +22,7 @@ SRC	=	src/main.c					\
 		src/parsing/get_lenght_of_file.c		\
 		src/parsing/check_name.c			\
 		src/parsing/get_name.c				\
+		src/lib/my_strcpy.c				\
 		src/lib/get_lenght_of_list.c			\
 		src/lib/show_list.c				\
 		src/lib/my_strcmp.c				\
@@ -47,7 +50,7 @@ OBJ	=	 $(SRC:.c=.o)
 
 NAME	= 	tetris
 
-CC	= 	gcc -F4 -g -I./inc
+CC	= 	clang -F4 -g -I./inc
 
 CFLAGS	= 	-W  -Wall -Wextra  # -Werror
 
