@@ -5,7 +5,7 @@
 ** Login   <peau_c@epitech.net>
 **
 ** Started on  Fri Mar  4 12:51:48 2016 Clement Peau
-** Last update Fri Mar  4 13:10:31 2016 Clement Peau
+** Last update Fri Mar  4 13:21:45 2016 Clement Peau
 */
 
 #ifndef _OPTION_H_
@@ -24,5 +24,6 @@ typedef struct s_tetriminos t_tetriminos;
 */
 int	options(t_tetriminos *);
 void	debug_mode(t_tetriminos *);
+void	aff_tetri(t_tetriminos *);
 
 #endif /* !_OPTION_H_ */

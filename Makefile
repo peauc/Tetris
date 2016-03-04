@@ -5,13 +5,14 @@
 ## Login   <peau_c@epitech.net>
 ##
 ## Started on  Mon Jan 18 14:44:16 2016 Clement Peau
-## Last update Fri Mar  4 12:54:25 2016 Clement Peau
+## Last update Fri Mar  4 13:21:18 2016 Clement Peau
 ##
 
 SRC	=	src/main.c					\
 		src/error.c					\
 		src/option/debug_mode.c				\
 		src/option/options.c				\
+		src/option/aff_tetri.c				\
 		src/parsing/parsing.c				\
 		src/parsing/add_info_to_list.c			\
 		src/parsing/get_infos.c				\

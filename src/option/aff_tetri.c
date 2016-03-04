@@ -5,10 +5,10 @@
 ** Login   <peau_c@epitech.net>
 **
 ** Started on  Fri Mar  4 13:18:03 2016 Clement Peau
-** Last update Fri Mar  4 13:18:24 2016 Clement Peau
+** Last update Fri Mar  4 13:21:24 2016 Clement Peau
 */
 
-#include "option.h"
+#include "options.h"
 
 void	aff_tetri(t_tetriminos *list)
 {
