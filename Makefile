@@ -5,7 +5,7 @@
 ## Login   <peau_c@epitech.net>
 ##
 ## Started on  Mon Jan 18 14:44:16 2016 Clement Peau
-## Last update Fri Mar  4 13:21:18 2016 Clement Peau
+## Last update Fri Mar  4 14:07:07 2016 Clement Peau
 ##
 
 SRC	=	src/main.c					\
@@ -20,6 +20,7 @@ SRC	=	src/main.c					\
 		src/parsing/get_lenght_of_file.c		\
 		src/parsing/check_name.c			\
 		src/parsing/get_name.c				\
+		src/lib/get_lenght_of_list.c			\
 		src/lib/show_list.c				\
 		src/lib/my_strcmp.c				\
 		src/lib/show_tab.c				\
@@ -32,6 +33,14 @@ SRC	=	src/main.c					\
 		src/aff.c					\
 		src/aff_game.c
 
+SRCPRINTF=	src/printf/my_flagn.c				\
+		src/printf/my_putnbrs.c				\
+		src/printf/my_putspecial.c			\
+		src/printf/put.c				\
+		src/printf/printf.c				\
+		src/printf/my_putnbrbase.c			\
+
+OBJPRINTF=	$(SRCPRINTF:.c=.o)
 
 OBJ	=	 $(SRC:.c=.o)
 
@@ -41,8 +50,10 @@ CC	= 	clang -F4 -g -I./inc
 
 CFLAGS	= 	-W  -Wall -Wextra  # -Werror
 
-$(NAME): 	$(OBJ)
-		@ gcc $(OBJ) -o $(NAME) -lncurses
+$(NAME): 	$(OBJ) $(OBJPRINTF)
+		ar rc libprintf.a $(OBJPRINTF)
+		ranlib libprintf.a
+		@ gcc $(OBJ) -o $(NAME) libprintf.a -lncurses
 		@ echo -e "\033[1;32m \t \t \t ♩♪♫ TETRIS\033[0;32m®\033[1;32m Compiled Sucesfully ♩♪♫\033[0m "
 		#@ aplay .tetris.wav &
 
@@ -50,6 +61,7 @@ all:		$(NAME)
 
 clean:
 		rm -f $(OBJ)
+		rm -f $(OBJPRINTF)
 
 fclean:		clean
 		rm -f $(NAME)
