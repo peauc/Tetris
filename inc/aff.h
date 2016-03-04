@@ -5,7 +5,7 @@
 ** Login   <thoma_c@epitech.net>
 **
 ** Started on  Tue Mar  1 22:59:22 2016 Clement Thomas
-** Last update Thu Mar  3 09:54:40 2016 Clement Peau
+** Last update Thu Mar  3 18:58:31 2016 Clement Thomas
 */
 
 #ifndef AFF_H_
@@ -18,6 +18,8 @@ typedef struct	s_board
   int		line;
   int		level;
   int		timer;
+  double       	timer_second;
+  int		timer_minutes;
 }		t_board;
 
 void	data_board_initialize(t_board *);

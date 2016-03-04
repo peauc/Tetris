@@ -5,7 +5,7 @@
 ## Login   <peau_c@epitech.net>
 ##
 ## Started on  Mon Jan 18 14:44:16 2016 Clement Peau
-## Last update Fri Mar  4 15:22:43 2016 Clement Peau
+## Last update Fri Mar  4 15:32:10 2016 Clement Thomas
 ##
 
 SRC	=	src/main.c					\
@@ -39,6 +39,7 @@ SRCPRINTF=	src/printf/my_flagn.c				\
 		src/printf/put.c				\
 		src/printf/printf.c				\
 		src/printf/my_putnbrbase.c			\
+		src/aff_next.c					\
 
 OBJPRINTF=	$(SRCPRINTF:.c=.o)
 
@@ -46,7 +47,7 @@ OBJ	=	 $(SRC:.c=.o)
 
 NAME	= 	tetris
 
-CC	= 	clang -F4 -g -I./inc
+CC	= 	gcc -F4 -g -I./inc
 
 CFLAGS	= 	-W  -Wall -Wextra  # -Werror
 

@@ -5,27 +5,24 @@
 ** Login   <thoma_c@epitech.net>
 **
 ** Started on  Tue Mar  1 23:01:35 2016 Clement Thomas
-** Last update Thu Mar  3 18:19:39 2016 Clement Thomas
+** Last update Fri Mar  4 15:55:18 2016 Clement Thomas
 */
 
 #include "tetris.h"
 
-void	timer(double tmp, WINDOW *origin)
+void	timer(WINDOW *origin, t_board *board)
 {
   double time_now;
-  double gaming;
-  int	 minute;
 
-  minute = 0;
+  wclear(origin);
   time_now = time(NULL);
-  gaming = time_now - tmp;
-  if (gaming == 60)
+  if (time_now - board->timer_second == 60)
     {
-
-      minute++;
+      board->timer_second = time(NULL);
+      board->timer_minutes++;
     }
-  mvwprintw(origin, 14, 16, "%d:", minute);
-  mvwprintw(origin, 14, 18, "%.0f", gaming);
+  mvwprintw(origin, 8, 16, "%d:", board->timer_minutes);
+  mvwprintw(origin, 8, 18, "%.0f", time_now - board->timer_second);
 }
 
 void	next_tetri(WINDOW *origin)
