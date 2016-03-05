@@ -5,7 +5,7 @@
 ** Login   <thoma_c@epitech.net>
 **
 ** Started on  Wed Feb 24 15:30:25 2016 Clement Thomas
-** Last update Fri Mar  4 15:55:05 2016 Clement Thomas
+** Last update Sat Mar  5 15:19:14 2016 Clement Thomas
 */
 
 #include "tetris.h"
@@ -66,11 +66,8 @@ void	aff_logo_next()
   mvprintw(4, 18, " ***");
 }
 
-WINDOW	*aff_board(t_board *board, WINDOW *origin)
+void	aff_board(t_board *board, WINDOW *new_win)
 {
-  WINDOW *new_win;
-
-  new_win = subwin(origin, 11, 23, 6, 1);
   wborder(new_win, '|', '|', '-', '-', '/', '\\', '\\', '/');
   mvwprintw(new_win, 2, 1, " Hight score");
   mvwprintw(new_win, 2, 17, "%d", board->hight_score);
@@ -82,29 +79,33 @@ WINDOW	*aff_board(t_board *board, WINDOW *origin)
   mvwprintw(new_win, 6, 17, "%d", board->level);
   mvwprintw(new_win, 8, 1, " Timer:");
   wrefresh(new_win);
-  return (new_win);
 }
 
-void		aff_tetris(int ch, SCREEN *new, t_board *board, WINDOW *origin)
+void		aff_tetris(int ch, t_board *board)
 {
-  WINDOW *new_win;
+  WINDOW	*win;
 
   board->timer_second = time(NULL);
   board->timer_minutes = 0;
+  win = initscr();
+  board->data_board = subwin(win, 11, 23, 6, 1);
+  board->next = subwin(win, 4, 9, 1, 48);
+  board->game = subwin(win, 22, 12, 0, 35);
   keypad(stdscr, TRUE);
   curs_set(FALSE);
   noecho();
   start_color();
-  while (2)
+  while (42)
     {
-      clear();
-      screen_size(origin);
-      aff_logo_next();
-      aff_game(origin);
-      new_win = aff_board(board, origin);
-      timer(new_win, board);
-      wrefresh(origin);
+      if ((screen_size(win)) == 1)
+	{
+	  clear();
+	  printw("Error size");
+	  usleep(1000);
+	}
+      else
+	test(win, board);
+      wrefresh(win);
     }
   endwin();
-  delscreen(new);
 }

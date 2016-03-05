@@ -5,7 +5,7 @@
 ## Login   <peau_c@epitech.net>
 ##
 ## Started on  Mon Jan 18 14:44:16 2016 Clement Peau
-## Last update Fri Mar  4 19:32:26 2016 Clement Peau
+## Last update Sat Mar  5 15:17:54 2016 Clement Thomas
 ##
 
 SRC	=	src/main.c					\
@@ -50,7 +50,7 @@ OBJ	=	 $(SRC:.c=.o)
 
 NAME	= 	tetris
 
-CC	= 	clang -F4 -g -I./inc
+CC	= 	gcc -F4 -g -I./inc
 
 CFLAGS	= 	-W  -Wall -Wextra  # -Werror
 
