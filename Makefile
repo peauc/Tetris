@@ -5,7 +5,7 @@
 ## Login   <peau_c@epitech.net>
 ##
 ## Started on  Mon Jan 18 14:44:16 2016 Clement Peau
-## Last update Sun Mar  6 15:11:19 2016 Clement Peau
+## Last update Sun Mar  6 20:21:47 2016 Clement Peau
 ##
 
 SRC	=	src/main.c					\
@@ -15,6 +15,7 @@ SRC	=	src/main.c					\
 		src/option/aff_tetri.c				\
 		src/option/aff_keys.c				\
 		src/option/initialize_keys.c			\
+		src/option/one_word_option.c			\
 		src/parsing/parsing.c				\
 		src/parsing/add_info_to_list.c			\
 		src/parsing/get_infos.c				\

@@ -5,7 +5,7 @@
 ** Login   <peau_c@epitech.net>
 **
 ** Started on  Fri Mar  4 12:51:48 2016 Clement Peau
-** Last update Sun Mar  6 14:44:29 2016 Clement Peau
+** Last update Sun Mar  6 20:21:42 2016 Clement Peau
 */
 
 #ifndef _OPTION_H_
@@ -35,13 +35,22 @@ typedef enum	s_enum_key
 }		t_enum_keys;
 
 typedef struct s_tetriminos t_tetriminos;
+typedef struct	s_game
+{
+  char		**array;
+  char		next;
+  int		level;
+  int		size[2];
+  t_tetriminos	*list;
+}		t_game;
 
 /*
 **FUNCTIONS
 */
-char	**options(t_tetriminos *, char **);
+int	one_word_options(t_game *, char **);
+int	options(t_game *, char **);
 char	**initialize_keys();
-void	debug_mode(t_tetriminos *, char **);
+void	debug_mode(t_game *);
 void	aff_tetri(t_tetriminos *);
 void	aff_key();
 

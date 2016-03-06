@@ -1,3 +1,4 @@
+
 /*
 ** parsing.c for parsing in /home/peau_c/rendu/PSU/PSU_2015_tetris
 **
@@ -5,7 +6,7 @@
 ** Login   <peau_c@epitech.net>
 **
 ** Started on  Mon Feb 29 18:47:52 2016 Clement Peau
-** Last update Fri Mar  4 15:49:05 2016 Clement Peau
+** Last update Sun Mar  6 18:04:26 2016 Clement Peau
 */
 
 #include "tetris.h"
@@ -16,7 +17,6 @@ t_tetriminos	*export_files()
   DIR		*dirp;
   char		*str;
   t_tetriminos	*tetriminos;
-
   if ((tetriminos = create()) == NULL)
     return (NULL);
   if ((dirp = opendir("./tetriminos")) == NULL)
@@ -24,7 +24,6 @@ t_tetriminos	*export_files()
   while ((dirent = readdir(dirp)) != NULL)
       if (dirent->d_name[0] != '.')
 	{
-	  printf("%s\n", dirent->d_name);
 	  if ((str = my_strcat_name("tetriminos/", dirent->d_name)) == NULL)
 	  	return (NULL);
 	  add_infos_to_list(tetriminos, str);

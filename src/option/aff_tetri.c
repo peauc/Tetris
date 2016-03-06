@@ -5,7 +5,7 @@
 ** Login   <peau_c@epitech.net>
 **
 ** Started on  Fri Mar  4 13:18:03 2016 Clement Peau
-** Last update Sun Mar  6 16:35:40 2016 Clement Peau
+** Last update Sun Mar  6 17:38:07 2016 Clement Peau
 */
 
 #include "options.h"
@@ -26,6 +26,6 @@ void	aff_tetri(t_tetriminos *list)
 		    tmp->name, tmp->size[0], tmp->size[1], tmp->color);
 	  show_tab(tmp->tetriminos);
 	}
-      	  tmp = tmp->next;
+      tmp = tmp->next;
     }
 }

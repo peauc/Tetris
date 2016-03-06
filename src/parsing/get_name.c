@@ -5,7 +5,7 @@
 ** Login   <peau_c@epitech.net>
 **
 ** Started on  Thu Mar  3 12:46:03 2016 Clement Peau
-** Last update Thu Mar  3 14:55:47 2016 Clement Peau
+** Last update Sun Mar  6 18:04:08 2016 Clement Peau
 */
 
 #include "parsing.h"
@@ -44,6 +44,5 @@ char	*get_file_name(char *full_name)
   if ((name = malloc((i + 1) * sizeof(char))) == NULL)
     return (NULL);
   get_file_name_next(name, full_name);
-  printf("fullname %s\n", name);
   return (name);
 }

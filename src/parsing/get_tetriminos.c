@@ -5,7 +5,7 @@
 ** Login   <peau_c@epitech.net>
 **
 ** Started on  Wed Mar  2 17:43:01 2016 Clement Peau
-** Last update Wed Mar  2 20:42:52 2016 Clement Peau
+** Last update Sun Mar  6 18:06:33 2016 Clement Peau
 */
 
 #include "parsing.h"
@@ -25,6 +25,5 @@ char **get_tetriminos(int fd, int rows)
       i++;
     }
   str[i] = NULL;
-  show_tab(str);
   return (str);
 }

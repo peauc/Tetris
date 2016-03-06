@@ -5,13 +5,13 @@
 ** Login   <peau_c@epitech.net>
 **
 ** Started on  Fri Mar  4 12:47:23 2016 Clement Peau
-** Last update Sun Mar  6 14:37:59 2016 Clement Peau
+** Last update Sun Mar  6 18:40:27 2016 Clement Peau
 */
 
 #include "options.h"
 
-void	debug_mode(t_tetriminos *list, char **keys)
+void	debug_mode(t_game *game)
 {
-  aff_key(keys);
-  aff_tetri(list);
+  aff_key(game);
+  aff_tetri(game->list);
 }

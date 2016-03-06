@@ -5,7 +5,7 @@
 ** Login   <peau_c@epitech.net>
 **
 ** Started on  Fri Mar  4 16:54:42 2016 Clement Peau
-** Last update Sun Mar  6 16:18:07 2016 Clement Peau
+** Last update Sun Mar  6 18:39:54 2016 Clement Peau
 */
 
 #include "options.h"
@@ -27,22 +27,22 @@ void	aff_letter(char *str)
   write(1, "\n", 1);
 }
 
-void	aff_key(char **array)
+void	aff_key(t_game *game)
 {
   my_printf("*** DEBUG MODE ***\n");
   my_printf("Key Left : ");
-  aff_letter(array[LEFT_KEY]);
+  aff_letter(game->array[LEFT_KEY]);
   my_printf("Key Right : ");
-  aff_letter(array[RIGHT_KEY]);
+  aff_letter(game->array[RIGHT_KEY]);
   my_printf("Key Turn : ");
-  aff_letter(array[KEY_TURN]);
+  aff_letter(game->array[KEY_TURN]);
   my_printf("Key Drop : ");
-  aff_letter(array[KEY_DROP]);
+  aff_letter(game->array[KEY_DROP]);
   my_printf("Key Quit : ");
-  aff_letter(array[KEY_QUIT]);
+  aff_letter(game->array[KEY_QUIT]);
   my_printf("Key Pause : ");
-  aff_letter(array[KEY_PAUSE]);
-  my_printf("Next : Yes/No\n");
-  my_printf("Level : \n");
-  my_printf("Size : \n");
+  aff_letter(game->array[KEY_PAUSE]);
+  (game->next == 1 ? my_printf("Next : No\n") : my_printf("Next : Yes\n"));
+  my_printf("Level : %d\n", game->level);
+  my_printf("Size : %d*%d\n", game->size[1], game->size[0]);
 }
