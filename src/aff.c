@@ -5,13 +5,15 @@
 ** Login   <thoma_c@epitech.net>
 **
 ** Started on  Wed Feb 24 15:30:25 2016 Clement Thomas
-** Last update Sat Mar  5 15:19:14 2016 Clement Thomas
+** Last update Sun Mar  6 19:24:24 2016 Clement Thomas
 */
 
 #include "tetris.h"
 
 void	data_board_initialize(t_board *board)
 {
+  board->size_x = 10;
+  board->size_y = 20;
   board->hight_score = 0;
   board->score = 0;
   board->line = 0;
@@ -81,21 +83,22 @@ void	aff_board(t_board *board, WINDOW *new_win)
   wrefresh(new_win);
 }
 
-void		aff_tetris(int ch, t_board *board)
+void		aff_tetris(int ch, t_board *board, t_tetriminos *list)
 {
   WINDOW	*win;
 
+  int i = 0;
   board->timer_second = time(NULL);
   board->timer_minutes = 0;
   win = initscr();
   board->data_board = subwin(win, 11, 23, 6, 1);
   board->next = subwin(win, 4, 9, 1, 48);
-  board->game = subwin(win, 22, 12, 0, 35);
+  board->game = subwin(win, board->size_y + 2, board->size_x + 2, 0, 35);
   keypad(stdscr, TRUE);
   curs_set(FALSE);
   noecho();
   start_color();
-  while (42)
+  while (2)
     {
       if ((screen_size(win)) == 1)
 	{
@@ -104,7 +107,7 @@ void		aff_tetris(int ch, t_board *board)
 	  usleep(1000);
 	}
       else
-	test(win, board);
+	my_screen(win, board, list);
       wrefresh(win);
     }
   endwin();

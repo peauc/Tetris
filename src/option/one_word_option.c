@@ -5,7 +5,7 @@
 ** Login   <peau_c@epitech.net>
 **
 ** Started on  Sun Mar  6 19:03:42 2016 Clement Peau
-** Last update Sun Mar  6 20:28:30 2016 Clement Peau
+** Last update Sun Mar  6 20:38:33 2016 Clement Peau
 */
 
 #include "options.h"
@@ -44,7 +44,9 @@ int	one_word_options(t_game *game, char **av)
 {
   int	(*single_worded_param[10])(t_game *, char *);
   char	**dico;
+  int	i;
 
+  i = 0;
   if ((dico = malloc(sizeof(char *) * 12)) == NULL ||
       (load_dico(dico) == 1))
     return (1);
@@ -58,6 +60,5 @@ int	one_word_options(t_game *game, char **av)
   single_worded_param[7] = joyeuse_fonction;
   single_worded_param[8] = joyeuse_fonction;
   single_worded_param[9] = joyeuse_fonction;
-
   return (0);
 }

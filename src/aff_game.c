@@ -5,7 +5,7 @@
 ** Login   <thoma_c@epitech.net>
 **
 ** Started on  Tue Mar  1 23:01:35 2016 Clement Thomas
-** Last update Sat Mar  5 14:56:32 2016 Clement Thomas
+** Last update Sun Mar  6 20:07:14 2016 Clement Thomas
 */
 
 #include "tetris.h"
@@ -24,7 +24,7 @@ void	timer(WINDOW *origin, t_board *board)
   mvwprintw(origin, 8, 18, "%.0f", time_now - board->timer_second);
 }
 
-void	next_tetri(WINDOW *new_win)
+void		next_tetri(WINDOW *new_win, t_tetriminos *list)
 {
   wborder(new_win, '|', '|', '-', '-', '/', '\\', '\\', '/');
   mvwprintw(new_win, 0, 1, "Next");

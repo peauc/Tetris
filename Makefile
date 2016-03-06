@@ -5,7 +5,7 @@
 ## Login   <peau_c@epitech.net>
 ##
 ## Started on  Mon Jan 18 14:44:16 2016 Clement Peau
-## Last update Sun Mar  6 20:21:47 2016 Clement Peau
+## Last update Sun Mar  6 20:44:03 2016 Clement Peau
 ##
 
 SRC	=	src/main.c					\
@@ -36,7 +36,7 @@ SRC	=	src/main.c					\
 		src/linked_list/add_in_alphanumerical_order.c	\
 		src/linked_list/create.c			\
 		src/aff.c					\
-		src/aff_game.c
+		src/aff_game.c					\
 
 SRCPRINTF=	src/printf/my_flagn.c				\
 		src/printf/my_putnbrs.c				\
