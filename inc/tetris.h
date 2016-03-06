@@ -5,7 +5,7 @@
 ** Login   <thoma_c@epitech.net>
 **
 ** Started on  Wed Feb 24 15:30:55 2016 Clement Thomas
-** Last update Fri Mar  4 19:34:23 2016 Clement Peau
+** Last update Sat Mar  5 14:13:00 2016 Clement Peau
 */
 
 #ifndef TETRIS_H_
@@ -33,8 +33,9 @@
 /*
 **UTILS
 */
-int	my_strlen(char *);
+char	*my_strdup(char *);
 int	getnbr(char *);
+int	my_strlen(char *);
 int	my_strcmp(char *, char *);
 void	my_strcpy(char *, char *);
 void	show_tab(char **);

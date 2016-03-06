@@ -5,7 +5,7 @@
 ** Login   <thoma_c@epitech.net>
 **
 ** Started on  Wed Feb 24 15:30:25 2016 Clement Thomas
-** Last update Fri Mar  4 19:10:41 2016 Clement Peau
+** Last update Sun Mar  6 14:05:17 2016 Clement Peau
 */
 
 #include "tetris.h"
@@ -19,14 +19,13 @@ int		main(int argc, char **argv)
   /* SCREEN	*new; */
   /* t_board	board; */
 
-
-  list = parsing();
-  keys = options(list, argv);
+  /* win = initscr(); */
   /* argc = argc; */
   /* argv = argv; */
   /* new = newterm(NULL, stderr, stdin); */
   /* new = set_term(new); */
-  /* win = initscr(); */
+  list = parsing();
+  keys = options(list, argv);
   /* data_board_initialize(&board); */
   /* aff_tetris(0, new, &board, win); */
   return (0);

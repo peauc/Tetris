@@ -5,11 +5,12 @@
 ** Login   <peau_c@epitech.net>
 **
 ** Started on  Fri Mar  4 12:51:48 2016 Clement Peau
-** Last update Fri Mar  4 19:33:50 2016 Clement Peau
+** Last update Sun Mar  6 14:44:29 2016 Clement Peau
 */
 
 #ifndef _OPTION_H_
 # define _OPTION_H_
+
 
 /*
 ** HEADERS
@@ -18,6 +19,9 @@
 # include "parsing.h"
 # include "linked_list.h"
 # include "aff.h"
+# include <curses.h>
+# include <term.h>
+
 
 typedef enum	s_enum_key
 {
@@ -37,7 +41,7 @@ typedef struct s_tetriminos t_tetriminos;
 */
 char	**options(t_tetriminos *, char **);
 char	**initialize_keys();
-void	debug_mode(t_tetriminos *);
+void	debug_mode(t_tetriminos *, char **);
 void	aff_tetri(t_tetriminos *);
 void	aff_key();
 

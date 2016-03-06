@@ -5,7 +5,7 @@
 ## Login   <peau_c@epitech.net>
 ##
 ## Started on  Mon Jan 18 14:44:16 2016 Clement Peau
-## Last update Fri Mar  4 19:32:26 2016 Clement Peau
+## Last update Sat Mar  5 14:10:46 2016 Clement Peau
 ##
 
 SRC	=	src/main.c					\
@@ -22,6 +22,7 @@ SRC	=	src/main.c					\
 		src/parsing/get_lenght_of_file.c		\
 		src/parsing/check_name.c			\
 		src/parsing/get_name.c				\
+		src/lib/my_strdup.c				\
 		src/lib/my_strcpy.c				\
 		src/lib/get_lenght_of_list.c			\
 		src/lib/show_list.c				\
