@@ -5,7 +5,7 @@
 ** Login   <peau_c@epitech.net>
 **
 ** Started on  Fri Mar  4 13:18:03 2016 Clement Peau
-** Last update Fri Mar  4 15:57:07 2016 Clement Peau
+** Last update Sun Mar  6 16:35:40 2016 Clement Peau
 */
 
 #include "options.h"
@@ -22,7 +22,8 @@ void	aff_tetri(t_tetriminos *list)
 	my_printf("Tetriminos : Name %s : Error\n", tmp->name);
       else
 	{
-	  my_printf("Tetriminos : Name %s : Size %d*%d : Color %d :\n", tmp->name, tmp->size[0], tmp->size[1], tmp->color);
+	  my_printf("Tetriminos : Name %s : Size %d*%d : Color %d :\n",
+		    tmp->name, tmp->size[0], tmp->size[1], tmp->color);
 	  show_tab(tmp->tetriminos);
 	}
       	  tmp = tmp->next;
