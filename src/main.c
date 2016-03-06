@@ -5,7 +5,7 @@
 ** Login   <thoma_c@epitech.net>
 **
 ** Started on  Wed Feb 24 15:30:25 2016 Clement Thomas
-** Last update Sun Mar  6 14:05:17 2016 Clement Peau
+** Last update Sun Mar  6 15:11:48 2016 Clement Peau
 */
 
 #include "tetris.h"
@@ -16,7 +16,6 @@ int		main(int argc, char **argv)
   t_tetriminos	*list;
   char		**keys;
   /* WINDOW	*win; */
-  /* SCREEN	*new; */
   /* t_board	board; */
 
   /* win = initscr(); */

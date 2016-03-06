@@ -5,7 +5,7 @@
 ** Login   <thoma_c@epitech.net>
 **
 ** Started on  Wed Feb 24 15:30:55 2016 Clement Thomas
-** Last update Sat Mar  5 14:13:00 2016 Clement Peau
+** Last update Sun Mar  6 15:10:57 2016 Clement Peau
 */
 
 #ifndef TETRIS_H_
@@ -44,6 +44,6 @@ void	show_tab(char **);
 **ERRORS
 */
 int	error_int(char *, int);
-void	aff_tetris(int, SCREEN *, t_board *, WINDOW *);
+void	aff_tetris(int, t_board *);
 
 #endif /* !TETRIS_H_ */
