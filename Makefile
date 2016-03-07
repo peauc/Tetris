@@ -5,7 +5,7 @@
 ## Login   <peau_c@epitech.net>
 ##
 ## Started on  Mon Jan 18 14:44:16 2016 Clement Peau
-## Last update Mon Mar  7 14:59:58 2016 Clement Peau
+## Last update Mon Mar  7 16:15:15 2016 Clement Thomas
 ##
 
 SRC	=	src/main.c					\
@@ -38,6 +38,7 @@ SRC	=	src/main.c					\
 		src/linked_list/create.c			\
 		src/aff.c					\
 		src/aff_game.c					\
+		src/next_tetriminos.c
 
 SRCPRINTF=	src/printf/my_flagn.c				\
 		src/printf/my_putnbrs.c				\
@@ -53,7 +54,7 @@ OBJ	=	 $(SRC:.c=.o)
 
 NAME	= 	tetris
 
-CC	= 	clang -F4 -g -I./inc
+CC	= 	gcc -F4 -g -I./inc
 
 CFLAGS	= 	-W  -Wall -Wextra  # -Werror
 

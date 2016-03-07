@@ -5,12 +5,12 @@
 ** Login   <thoma_c@epitech.net>
 **
 ** Started on  Wed Feb 24 15:30:25 2016 Clement Thomas
-** Last update Sun Mar  6 19:24:24 2016 Clement Thomas
+** Last update Mon Mar  7 17:52:52 2016 Clement Thomas
 */
 
 #include "tetris.h"
 
-void	data_board_initialize(t_board *board)
+void	data_board_initialize(t_board *board, t_tetriminos *list)
 {
   board->size_x = 10;
   board->size_y = 20;
@@ -19,6 +19,9 @@ void	data_board_initialize(t_board *board)
   board->line = 0;
   board->level = 1;
   board->timer = 0;
+  board->change_tetri = 0;
+  board->timer_second = time(NULL);
+  board->timer_minutes = 0;
 }
 
 void	aff_logo()
@@ -87,28 +90,25 @@ void		aff_tetris(int ch, t_board *board, t_tetriminos *list)
 {
   WINDOW	*win;
 
-  int i = 0;
-  board->timer_second = time(NULL);
-  board->timer_minutes = 0;
   win = initscr();
-  board->data_board = subwin(win, 11, 23, 6, 1);
-  board->next = subwin(win, 4, 9, 1, 48);
-  board->game = subwin(win, board->size_y + 2, board->size_x + 2, 0, 35);
   keypad(stdscr, TRUE);
   curs_set(FALSE);
   noecho();
   start_color();
+  board->data_board = subwin(win, 11, 23, 6, 1);
+  board->next = subwin(win, 7, 12, 1, 48);
+  board->game = subwin(win, board->size_y + 2, board->size_x + 2, 0, 35);
   while (2)
     {
       if ((screen_size(win)) == 1)
 	{
-	  clear();
+	  wclear(win);
 	  printw("Error size");
 	  usleep(1000);
 	}
       else
 	my_screen(win, board, list);
-      wrefresh(win);
+      refresh();
     }
   endwin();
 }
