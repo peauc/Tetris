@@ -5,7 +5,7 @@
 ** Login   <peau_c@epitech.net>
 **
 ** Started on  Fri Mar  4 12:51:48 2016 Clement Peau
-** Last update Mon Mar  7 17:46:38 2016 Clement Peau
+** Last update Mon Mar  7 19:55:59 2016 Clement Peau
 */
 
 #ifndef _OPTION_H_
@@ -42,6 +42,7 @@ typedef struct	s_game
   char		next;
   int		level;
   int		size[2];
+  char		debug;
   t_tetriminos	*list;
 }		t_game;
 
@@ -65,12 +66,15 @@ void	aff_key();
 /*
 ** FUNCTION POINTER
 */
+int	next_modifier(t_game *, char **, int);
 int	joyeuse_fonction(t_game *, char **, int);
 int	key_drop_modifier(t_game *, char **, int);
 int	left_key_modifier(t_game *, char **, int);
 int	right_key_modifier(t_game *, char **, int);
 int	key_turn_modifier(t_game *, char **, int);
 int	level_modifier(t_game *, char **, int);
-
-
+int	key_pause_modifier(t_game *, char **, int);
+int	key_quit_modifier(t_game *, char **, int);
+int	map_size_modifier(t_game *, char **, int);
+int	debug_modifier(t_game *, char **, int);
 #endif /* !_OPTION_H_ */

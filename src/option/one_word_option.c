@@ -5,7 +5,7 @@
 ** Login   <peau_c@epitech.net>
 **
 ** Started on  Sun Mar  6 19:03:42 2016 Clement Peau
-** Last update Mon Mar  7 17:46:55 2016 Clement Peau
+** Last update Mon Mar  7 19:55:26 2016 Clement Peau
 */
 
 #include "options.h"
@@ -66,11 +66,11 @@ static	int	load_fonction_ptr(t_pointer *fctpointer)
   fctpointer->pointer[2] = right_key_modifier;
   fctpointer->pointer[3] = key_turn_modifier;
   fctpointer->pointer[4] = key_drop_modifier;
-  fctpointer->pointer[5] = joyeuse_fonction;
-  fctpointer->pointer[6] = joyeuse_fonction;
-  fctpointer->pointer[7] = joyeuse_fonction;
-  fctpointer->pointer[8] = joyeuse_fonction;
-  fctpointer->pointer[9] = joyeuse_fonction;
+  fctpointer->pointer[5] = key_quit_modifier;
+  fctpointer->pointer[6] = key_pause_modifier;
+  fctpointer->pointer[7] = map_size_modifier;
+  fctpointer->pointer[8] = next_modifier;
+  fctpointer->pointer[9] = debug_modifier;
   return (0);
 }
 
@@ -89,7 +89,6 @@ int		one_word_options(t_game *game, char **av)
     {
       while (fct.dico[j] != NULL)
 	{
-	  printf("my_strcmp_modified(%s, %s) = %d\n", fct.dico[j], av[i], my_strcmp_modified(fct.dico[j], av[i]));
 	  if (my_strcmp_modified(fct.dico[j], av[i]) == 0)
 	    fct.pointer[j](game, av, i);
 	  j++;
