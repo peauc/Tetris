@@ -5,7 +5,7 @@
 ** Login   <peau_c@epitech.net>
 **
 ** Started on  Sun Mar  6 19:03:42 2016 Clement Peau
-** Last update Mon Mar  7 15:19:56 2016 Clement Peau
+** Last update Mon Mar  7 17:46:55 2016 Clement Peau
 */
 
 #include "options.h"
@@ -27,7 +27,7 @@ static	int	my_strcmp_modified(char *dico, char *test)
 int		joyeuse_fonction(t_game *game, char **av, int i)
 {
   my_printf("je suis une joyeuse_fonction\n");
-  return (1);
+  return (0);
 }
 
 static char	**load_dico()
@@ -62,10 +62,10 @@ static	int	load_fonction_ptr(t_pointer *fctpointer)
   if ((fctpointer->pointer = malloc(8 * 10)) == NULL)
     return (1);
   fctpointer->pointer[0] = level_modifier;
-  fctpointer->pointer[1] = joyeuse_fonction;
-  fctpointer->pointer[2] = joyeuse_fonction;
-  fctpointer->pointer[3] = joyeuse_fonction;
-  fctpointer->pointer[4] = joyeuse_fonction;
+  fctpointer->pointer[1] = left_key_modifier;
+  fctpointer->pointer[2] = right_key_modifier;
+  fctpointer->pointer[3] = key_turn_modifier;
+  fctpointer->pointer[4] = key_drop_modifier;
   fctpointer->pointer[5] = joyeuse_fonction;
   fctpointer->pointer[6] = joyeuse_fonction;
   fctpointer->pointer[7] = joyeuse_fonction;
@@ -81,7 +81,7 @@ int		one_word_options(t_game *game, char **av)
   int		j;
 
   j = 0;
-  i = 0;
+  i = 1;
   if  ((fct.dico = load_dico()) == NULL ||
        load_fonction_ptr(&fct) == 1)
     return (1);

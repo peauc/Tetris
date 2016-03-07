@@ -6,7 +6,7 @@
 ** Login   <peau_c@epitech.net>
 **
 ** Started on  Sat Mar  5 14:00:59 2016 Clement Peau
-** Last update Sat Mar  5 14:11:00 2016 Clement Peau
+** Last update Mon Mar  7 17:19:05 2016 Clement Peau
 */
 
 #include "tetris.h"
@@ -14,14 +14,12 @@
 char	*my_strdup(char *str)
 {
   int	i;
-  int	j;
   char	*dup;
 
-  j = 0;
-  i = my_strlen(str);
-  if ((dup = malloc((i + 1) * sizeof(char))) == NULL)
+  i = -1;
+  if ((dup = malloc((my_strlen(str) + 1) * sizeof(char))) == NULL)
     return (NULL);
-  while (str[i++])
+  while (str[++i])
     dup[i] = str[i];
   dup[i] = 0;
   return (dup);

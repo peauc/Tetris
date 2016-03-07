@@ -5,7 +5,7 @@
 ** Login   <peau_c@epitech.net>
 **
 ** Started on  Fri Mar  4 12:51:48 2016 Clement Peau
-** Last update Mon Mar  7 14:59:30 2016 Clement Peau
+** Last update Mon Mar  7 17:46:38 2016 Clement Peau
 */
 
 #ifndef _OPTION_H_
@@ -66,6 +66,11 @@ void	aff_key();
 ** FUNCTION POINTER
 */
 int	joyeuse_fonction(t_game *, char **, int);
+int	key_drop_modifier(t_game *, char **, int);
+int	left_key_modifier(t_game *, char **, int);
+int	right_key_modifier(t_game *, char **, int);
+int	key_turn_modifier(t_game *, char **, int);
 int	level_modifier(t_game *, char **, int);
+
 
 #endif /* !_OPTION_H_ */
