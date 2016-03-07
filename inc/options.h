@@ -5,7 +5,7 @@
 ** Login   <peau_c@epitech.net>
 **
 ** Started on  Fri Mar  4 12:51:48 2016 Clement Peau
-** Last update Sun Mar  6 20:21:42 2016 Clement Peau
+** Last update Mon Mar  7 14:59:30 2016 Clement Peau
 */
 
 #ifndef _OPTION_H_
@@ -35,6 +35,7 @@ typedef enum	s_enum_key
 }		t_enum_keys;
 
 typedef struct s_tetriminos t_tetriminos;
+
 typedef struct	s_game
 {
   char		**array;
@@ -43,6 +44,13 @@ typedef struct	s_game
   int		size[2];
   t_tetriminos	*list;
 }		t_game;
+
+typedef struct	s_pointer
+{
+  char		**dico;
+  int		(**pointer)(t_game *, char **, int);
+}		t_pointer;
+
 
 /*
 **FUNCTIONS
@@ -53,5 +61,11 @@ char	**initialize_keys();
 void	debug_mode(t_game *);
 void	aff_tetri(t_tetriminos *);
 void	aff_key();
+
+/*
+** FUNCTION POINTER
+*/
+int	joyeuse_fonction(t_game *, char **, int);
+int	level_modifier(t_game *, char **, int);
 
 #endif /* !_OPTION_H_ */

@@ -5,11 +5,12 @@
 ## Login   <peau_c@epitech.net>
 ##
 ## Started on  Mon Jan 18 14:44:16 2016 Clement Peau
-## Last update Sun Mar  6 20:44:03 2016 Clement Peau
+## Last update Mon Mar  7 14:59:58 2016 Clement Peau
 ##
 
 SRC	=	src/main.c					\
 		src/error.c					\
+		src/option/fonction_pointer.c			\
 		src/option/debug_mode.c				\
 		src/option/options.c				\
 		src/option/aff_tetri.c				\
