@@ -5,7 +5,7 @@
 ** Login   <thoma_c@epitech.net>
 **
 ** Started on  Tue Mar  1 22:59:22 2016 Clement Thomas
-** Last update Sun Mar  6 18:23:59 2016 Clement Thomas
+** Last update Mon Mar  7 18:19:57 2016 Clement Peau
 */
 
 #ifndef AFF_H_
@@ -27,12 +27,23 @@ typedef struct	s_board
   WINDOW	*next;
   int		size_x;
   int		size_y;
+  int		change_tetri;
+  int		nb;
 }		t_board;
 
-void		data_board_initialize(t_board *);
+void		aff_logo_next();
 void		aff_game(WINDOW *);
 int		nb_tetriminos(t_tetriminos *);
-t_tetriminos	*which_tetriminos(t_tetriminos *);
-void		aff_next_tetri(WINDOW *, t_tetriminos *);
+t_tetriminos	*which_tetriminos(t_tetriminos *, int);
+void		aff_next_tetri(WINDOW *, t_tetriminos *, int);
+void		aff_tetris(int, t_board *, t_tetriminos *);
+void		aff_board(t_board *, WINDOW *);
+void		aff_logo();
+void		data_board_initialize(t_board *, t_tetriminos *);
+void		my_screen(WINDOW *, t_board *, t_tetriminos *);
+int		screen_size(WINDOW *);
+void		timer(WINDOW *, t_board *);
+void		next_tetri(WINDOW *, t_tetriminos *);
+void		aff_game(WINDOW *);
 
 #endif /* !AFF_H_ */
