@@ -5,7 +5,7 @@
 ** Login   <peau_c@epitech.net>
 **
 ** Started on  Sun Mar  6 19:03:42 2016 Clement Peau
-** Last update Mon Mar  7 19:55:26 2016 Clement Peau
+** Last update Tue Mar  8 02:08:55 2016 Clement Peau
 */
 
 #include "options.h"
@@ -34,10 +34,11 @@ static char	**load_dico()
 {
   int		i;
   char		**dico;
+
   i = 0;
-  if ((dico = malloc(sizeof(char *) * 11)) == NULL)
+  if ((dico = malloc(sizeof(char *) * 12)) == NULL)
     return (NULL);
-  while (i < 10)
+  while (i < 11)
     {
       if ((dico[i] = malloc(sizeof(char) * 20)) == NULL)
 	return (NULL);
@@ -53,13 +54,14 @@ static char	**load_dico()
   my_strcpy(dico[7], "--map-size=");
   my_strcpy(dico[8], "--without-next");
   my_strcpy(dico[9], "--debug");
-  dico[10] = NULL;
+  my_strcpy(dico[10], "--help");
+  dico[11] = NULL;
   return (dico);
 }
 
 static	int	load_fonction_ptr(t_pointer *fctpointer)
 {
-  if ((fctpointer->pointer = malloc(8 * 10)) == NULL)
+  if ((fctpointer->pointer = malloc(8 * 12)) == NULL)
     return (1);
   fctpointer->pointer[0] = level_modifier;
   fctpointer->pointer[1] = left_key_modifier;
@@ -71,6 +73,8 @@ static	int	load_fonction_ptr(t_pointer *fctpointer)
   fctpointer->pointer[7] = map_size_modifier;
   fctpointer->pointer[8] = next_modifier;
   fctpointer->pointer[9] = debug_modifier;
+  fctpointer->pointer[10] = aff_help;
+  fctpointer->pointer[11] = NULL;
   return (0);
 }
 
@@ -90,7 +94,8 @@ int		one_word_options(t_game *game, char **av)
       while (fct.dico[j] != NULL)
 	{
 	  if (my_strcmp_modified(fct.dico[j], av[i]) == 0)
-	    fct.pointer[j](game, av, i);
+	    if ((fct.pointer[j](game, av, i)) == 1)
+	      return (write(2, "Wrong parameter\n", 16) - 15);
 	  j++;
 	}
       i++;

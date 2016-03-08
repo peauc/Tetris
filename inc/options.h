@@ -5,7 +5,7 @@
 ** Login   <peau_c@epitech.net>
 **
 ** Started on  Fri Mar  4 12:51:48 2016 Clement Peau
-** Last update Mon Mar  7 19:55:59 2016 Clement Peau
+** Last update Tue Mar  8 04:30:51 2016 Clement Peau
 */
 
 #ifndef _OPTION_H_
@@ -42,6 +42,7 @@ typedef struct	s_game
   char		next;
   int		level;
   int		size[2];
+  char		help;
   char		debug;
   t_tetriminos	*list;
 }		t_game;
@@ -56,6 +57,7 @@ typedef struct	s_pointer
 /*
 **FUNCTIONS
 */
+int	two_word_options(t_game *, char **);
 int	one_word_options(t_game *, char **);
 int	options(t_game *, char **);
 char	**initialize_keys();
@@ -66,6 +68,15 @@ void	aff_key();
 /*
 ** FUNCTION POINTER
 */
+int	debug_activator(t_game *, char **, int);
+int	next_desactivator(t_game *, char **, int);
+int	quit_key_modifier(t_game *, char **, int);
+int	pause_key_modifier(t_game *, char **, int);
+int	turn_key_modifier(t_game *, char **, int);
+int	drop_key_modifier(t_game *, char **, int);
+int	key_left_modifier(t_game *, char **, int);
+int	key_right_modifier(t_game *, char **, int);
+int	change_level(t_game *, char **, int);
 int	next_modifier(t_game *, char **, int);
 int	joyeuse_fonction(t_game *, char **, int);
 int	key_drop_modifier(t_game *, char **, int);
@@ -77,4 +88,6 @@ int	key_pause_modifier(t_game *, char **, int);
 int	key_quit_modifier(t_game *, char **, int);
 int	map_size_modifier(t_game *, char **, int);
 int	debug_modifier(t_game *, char **, int);
+int	aff_help(t_game *, char **, int);
+
 #endif /* !_OPTION_H_ */

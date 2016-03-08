@@ -5,7 +5,7 @@
 ** Login   <peau_c@epitech.net>
 **
 ** Started on  Mon Mar  7 14:44:17 2016 Clement Peau
-** Last update Mon Mar  7 19:21:32 2016 Clement Peau
+** Last update Tue Mar  8 01:51:10 2016 Clement Peau
 */
 
 #include "options.h"
@@ -33,7 +33,8 @@ int	left_key_modifier(t_game *game, char **av, int i)
   if (av[i][++j] != 0)
     {
       free(game->array[LEFT_KEY]);
-      game->array[LEFT_KEY] = my_strdup(av[i] + j);
+      if ((game->array[LEFT_KEY] = my_strdup(av[i] + j)) == NULL)
+	return (1);
     }
   else if (av[i][j] == 0)
     return (1);
@@ -51,7 +52,8 @@ int	right_key_modifier(t_game *game, char **av, int i)
   if (av[i][++j] != 0)
     {
       free(game->array[RIGHT_KEY]);
-      game->array[RIGHT_KEY] = my_strdup(av[i] + j);
+      if ((game->array[RIGHT_KEY] = my_strdup(av[i] + j)) == NULL)
+	return (1);
     }
   else if (av[i][j] == 0)
     return (1);
@@ -69,7 +71,8 @@ int	key_drop_modifier(t_game *game, char **av, int i)
   if (av[i][++j] != 0)
     {
       free(game->array[KEY_TURN]);
-      game->array[KEY_TURN] = my_strdup(av[i] + j);
+      if ((game->array[KEY_TURN] = my_strdup(av[i] + j)) == NULL)
+	return (1);
     }
   else if (av[i][j] == 0)
     return (1);
@@ -88,7 +91,8 @@ int	key_turn_modifier(t_game *game, char **av, int i)
   if (av[i][++j] != 0)
     {
       free(game->array[KEY_TURN]);
-      game->array[KEY_TURN] = my_strdup(av[i] + j);
+      if ((game->array[KEY_TURN] = my_strdup(av[i] + j)) == NULL)
+	return (1);
     }
   else if (av[i][j] == 0)
     return (1);

@@ -5,7 +5,7 @@
 ** Login   <peau_c@epitech.net>
 **
 ** Started on  Mon Mar  7 17:58:15 2016 Clement Peau
-** Last update Mon Mar  7 19:58:35 2016 Clement Peau
+** Last update Tue Mar  8 01:48:00 2016 Clement Peau
 */
 
 #include "options.h"
@@ -20,7 +20,8 @@ int	key_quit_modifier(t_game *game, char **av, int i)
   if (av[i][++j] != 0)
     {
       free(game->array[KEY_QUIT]);
-      game->array[KEY_QUIT] = my_strdup(av[i] + j);
+      if ((game->array[KEY_QUIT] = my_strdup(av[i] + j)) == NULL)
+	return (1);
     }
   else if (av[i][j] == 0)
     return (1);
@@ -38,7 +39,8 @@ int	key_pause_modifier(t_game *game, char **av, int i)
   if (av[i][++j] != 0)
     {
       free(game->array[KEY_PAUSE]);
-      game->array[KEY_PAUSE] = my_strdup(av[i] + j);
+      if ((game->array[KEY_PAUSE] = my_strdup(av[i] + j)) == NULL)
+	return (1);
     }
   else if (av[i][j] == 0)
     return (1);
@@ -67,16 +69,33 @@ int	map_size_modifier(t_game *game, char **av, int i)
 
 int	next_modifier(t_game *game, char **av, int i)
 {
+  if (my_strlen(av[i]) != my_strlen("--without-next"))
   my_printf("next mode off\n");
   game->next = 1;
   i = i;
   av = av;
+  return (0);
 }
 
 int	debug_modifier(t_game *game, char **av, int i)
 {
+  int	j;
+  char	*str;
+
+  if (my_strlen(av[i]) != my_strlen("--debug"))
+      return (1);
   my_printf("debug mode on\n");
   game->debug = 1;
   av = av;
   i = i;
+  return (0);
+}
+
+int	aff_help(t_game *game, char **av, int i)
+{
+  if (my_strlen(av[i]) != my_strlen("--help"))
+    return (1);
+  printf("did you ask for help ?\n");
+  game->help = 0;
+  return (0);
 }
