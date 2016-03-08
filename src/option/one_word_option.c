@@ -5,7 +5,7 @@
 ** Login   <peau_c@epitech.net>
 **
 ** Started on  Sun Mar  6 19:03:42 2016 Clement Peau
-** Last update Tue Mar  8 02:08:55 2016 Clement Peau
+** Last update Tue Mar  8 15:00:11 2016 Clement Peau
 */
 
 #include "options.h"
@@ -84,13 +84,13 @@ int		one_word_options(t_game *game, char **av)
   int		i;
   int		j;
 
-  j = 0;
   i = 1;
   if  ((fct.dico = load_dico()) == NULL ||
        load_fonction_ptr(&fct) == 1)
     return (1);
   while (av[i])
     {
+      j = 0;
       while (fct.dico[j] != NULL)
 	{
 	  if (my_strcmp_modified(fct.dico[j], av[i]) == 0)
@@ -99,7 +99,6 @@ int		one_word_options(t_game *game, char **av)
 	  j++;
 	}
       i++;
-      j = 0;
     }
   return (0);
 }

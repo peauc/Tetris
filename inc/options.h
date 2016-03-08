@@ -5,7 +5,7 @@
 ** Login   <peau_c@epitech.net>
 **
 ** Started on  Fri Mar  4 12:51:48 2016 Clement Peau
-** Last update Tue Mar  8 04:30:51 2016 Clement Peau
+** Last update Tue Mar  8 18:03:18 2016 Clement Peau
 */
 
 #ifndef _OPTION_H_
@@ -64,6 +64,7 @@ char	**initialize_keys();
 void	debug_mode(t_game *);
 void	aff_tetri(t_tetriminos *);
 void	aff_key();
+void	help_mode(t_game *, char *);
 
 /*
 ** FUNCTION POINTER

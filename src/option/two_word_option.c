@@ -5,7 +5,7 @@
 ** Login   <peau_c@epitech.net>
 **
 ** Started on  Tue Mar  8 01:27:47 2016 Clement Peau
-** Last update Tue Mar  8 04:28:44 2016 Clement Peau
+** Last update Tue Mar  8 15:01:08 2016 Clement Peau
 */
 
 #include "options.h"
@@ -29,7 +29,7 @@ static int	my_strcmp_modified(char *dico, char *test)
 
 static int	load_function_pointer(t_pointer *fctpointer)
 {
-  if ((fctpointer->pointer = malloc(8 * 10)) == NULL)
+  if ((fctpointer->pointer = malloc(8 * 11)) == NULL)
     return (1);
   fctpointer->pointer[0] = change_level;
   fctpointer->pointer[1] = key_left_modifier;
@@ -52,7 +52,7 @@ static char	**load_dico()
   i = 0;
   if ((dico = malloc(sizeof(char *) * 10)) == NULL)
     return (NULL);
-  while (i < 11)
+  while (i < 10)
     {
       if ((dico[i] = malloc(sizeof(char) * 20)) == NULL)
 	return (NULL);

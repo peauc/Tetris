@@ -5,7 +5,7 @@
 ** Login   <peau_c@epitech.net>
 **
 ** Started on  Fri Mar  4 12:31:47 2016 Clement Peau
-** Last update Tue Mar  8 02:30:47 2016 Clement Peau
+** Last update Tue Mar  8 17:39:27 2016 Clement Peau
 */
 
 #include "tetris.h"
@@ -26,5 +26,12 @@ int	options(t_game *game, char **av)
   load_default_info(game);
   one_word_options(game, av);
   two_word_options(game, av);
+  if (game->help == 1)
+    {
+      help_mode(game, av[0]);
+      return (1);
+    }
+  if (game->debug == 1)
+      debug_mode(game);
   return (0);
 }
