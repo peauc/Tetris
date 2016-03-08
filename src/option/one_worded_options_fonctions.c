@@ -5,7 +5,7 @@
 ** Login   <peau_c@epitech.net>
 **
 ** Started on  Mon Mar  7 17:58:15 2016 Clement Peau
-** Last update Tue Mar  8 18:04:07 2016 Clement Peau
+** Last update Tue Mar  8 18:16:44 2016 Clement Peau
 */
 
 #include "options.h"
@@ -60,7 +60,6 @@ int	map_size_modifier(t_game *game, char **av, int i)
     j++;
   j++;
   game->size[0] = getnbr(av[i] + j);
-	    game->size[0], game->size[1]);
   return (0);
 }
 
