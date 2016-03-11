@@ -5,7 +5,7 @@
 ** Login   <peau_c@epitech.net>
 **
 ** Started on  Tue Mar  8 01:27:47 2016 Clement Peau
-** Last update Tue Mar  8 15:01:08 2016 Clement Peau
+** Last update Fri Mar 11 15:50:53 2016 Clement Peau
 */
 
 #include "options.h"
@@ -39,7 +39,7 @@ static int	load_function_pointer(t_pointer *fctpointer)
   fctpointer->pointer[5] = quit_key_modifier;
   fctpointer->pointer[6] = pause_key_modifier;
   fctpointer->pointer[7] = next_desactivator;
-  fctpointer->pointer[8] = debug_modifier;
+  fctpointer->pointer[8] = debug_activator;
   fctpointer->pointer[9] = NULL;
   return (0);
 }
@@ -94,5 +94,6 @@ int	two_word_options(t_game *game, char **av)
       i++;
       j = 0;
     }
+  free_fct_pointer(&fct);
   return (0);
 }

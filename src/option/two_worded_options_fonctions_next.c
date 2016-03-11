@@ -5,14 +5,14 @@
 ** Login   <peau_c@epitech.net>
 **
 ** Started on  Tue Mar  8 03:49:39 2016 Clement Peau
-** Last update Tue Mar  8 18:05:51 2016 Clement Peau
+** Last update Fri Mar 11 15:15:23 2016 Clement Peau
 */
 
 #include "options.h"
 
 int	quit_key_modifier(t_game *game, char  **av, int i)
 {
-  if ((av[i + 1] == NULL || av[i + 1][0] == '-'))
+  if (av[i + 1] == NULL)
     return (1);
   free(game->array[KEY_QUIT]);
   game->array[KEY_QUIT] = my_strdup(av[i + 1]);
@@ -21,7 +21,7 @@ int	quit_key_modifier(t_game *game, char  **av, int i)
 
 int	pause_key_modifier(t_game *game, char **av, int i)
 {
-  if ((av[i + 1] == NULL || av[i + 1][0] == '-'))
+  if (av[i + 1] == NULL)
     return (1);
   free(game->array[KEY_PAUSE]);
   game->array[KEY_PAUSE] = my_strdup(av[i + 1]);

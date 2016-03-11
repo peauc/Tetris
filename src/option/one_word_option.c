@@ -5,7 +5,7 @@
 ** Login   <peau_c@epitech.net>
 **
 ** Started on  Sun Mar  6 19:03:42 2016 Clement Peau
-** Last update Wed Mar  9 14:46:58 2016 Clement Peau
+** Last update Fri Mar 11 15:58:56 2016 Clement Peau
 */
 
 #include "options.h"
@@ -100,5 +100,6 @@ int		one_word_options(t_game *game, char **av)
 	}
       i++;
     }
+  free_fct_pointer(&fct);
   return (0);
 }

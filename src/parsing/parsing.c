@@ -6,7 +6,7 @@
 ** Login   <peau_c@epitech.net>
 **
 ** Started on  Mon Feb 29 18:47:52 2016 Clement Peau
-** Last update Sun Mar  6 18:04:26 2016 Clement Peau
+** Last update Fri Mar 11 16:01:09 2016 Clement Peau
 */
 
 #include "tetris.h"
@@ -17,6 +17,7 @@ t_tetriminos	*export_files()
   DIR		*dirp;
   char		*str;
   t_tetriminos	*tetriminos;
+
   if ((tetriminos = create()) == NULL)
     return (NULL);
   if ((dirp = opendir("./tetriminos")) == NULL)
@@ -28,6 +29,7 @@ t_tetriminos	*export_files()
 	  	return (NULL);
 	  add_infos_to_list(tetriminos, str);
 	}
+  closedir(dirp);
   return (tetriminos);
 }
 

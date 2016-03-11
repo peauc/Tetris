@@ -5,7 +5,7 @@
 ** Login   <peau_c@epitech.net>
 **
 ** Started on  Tue Mar  1 20:53:48 2016 Clement Peau
-** Last update Sun Mar  6 18:05:15 2016 Clement Peau
+** Last update Fri Mar 11 16:47:17 2016 Clement Peau
 */
 
 #include "parsing.h"
@@ -22,4 +22,5 @@ int	get_first_line(t_tetriminos *list, char *first_line)
   while (first_line[i] != 32 && first_line[i++] != 0);
   list->color = getnbr(first_line + (i + 1));
   return (0);
+  free(first_line);
 }
