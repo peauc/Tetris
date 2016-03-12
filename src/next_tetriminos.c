@@ -5,7 +5,7 @@
 ** Login   <thoma_c@epitech.net>
 **
 ** Started on  Sun Mar  6 16:42:48 2016 Clement Thomas
-** Last update Fri Mar 11 15:25:27 2016 Clement Thomas
+** Last update Sat Mar 12 16:31:44 2016 Clement Peau
 */
 
 #include "tetris.h"
@@ -51,6 +51,7 @@ void		aff_next_tetri(WINDOW *new_win, t_tetriminos *nex, int nb)
       j = 0;
       while (tmp->tetriminos[i][j])
   	{
+	  wrefresh(new_win);
   	  wattron(new_win, COLOR_PAIR(7));
   	  mvwprintw(new_win, i + 2, j + 4, "%c", tmp->tetriminos[i][j]);
 	  wattroff(new_win, COLOR_PAIR(7));
@@ -58,5 +59,4 @@ void		aff_next_tetri(WINDOW *new_win, t_tetriminos *nex, int nb)
   	}
       i++;
     }
-  wrefresh(new_win);
 }

@@ -5,7 +5,7 @@
 ** Login   <thoma_c@epitech.net>
 **
 ** Started on  Wed Feb 24 15:30:25 2016 Clement Thomas
-** Last update Sat Mar 12 15:52:22 2016 Clement Peau
+** Last update Sat Mar 12 16:38:58 2016 Clement Peau
 */
 
 #include "tetris.h"
@@ -23,6 +23,7 @@ int	data_board_initialize(t_board *board, t_tetriminos *list, t_game *game)
   board->timer_second = time(NULL);
   board->timer_minutes = 0;
   tab_game(board->size_x, board->size_y, board);
+  return (0);
 }
 
 void	aff_logo()
@@ -119,4 +120,5 @@ int		aff_tetris(int ch, t_board *board, t_tetriminos *list,
       refresh();
     }
   endwin();
+  return (1);
 }

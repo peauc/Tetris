@@ -5,12 +5,13 @@
 ## Login   <peau_c@epitech.net>
 ##
 ## Started on  Mon Jan 18 14:44:16 2016 Clement Peau
-## Last update Tue Mar  8 17:56:06 2016 Clement Peau
+## Last update Sat Mar 12 15:53:27 2016 Clement Peau
 ##
 
 
 SRC	=	src/main.c					\
 		src/error.c					\
+		src/function_free.c				\
 		src/option/fonction_pointer.c			\
 		src/option/help_mode.c				\
 		src/option/debug_mode.c				\
@@ -44,7 +45,9 @@ SRC	=	src/main.c					\
 		src/linked_list/create.c			\
 		src/aff.c					\
 		src/aff_game.c					\
-		src/next_tetriminos.c
+		src/next_tetriminos.c				\
+		src/aff_next.c					\
+		src/tab_game.c					\
 
 SRCPRINTF=	src/printf/my_flagn.c				\
 		src/printf/my_putnbrs.c				\
@@ -52,39 +55,49 @@ SRCPRINTF=	src/printf/my_flagn.c				\
 		src/printf/put.c				\
 		src/printf/printf.c				\
 		src/printf/my_putnbrbase.c			\
-		src/aff_next.c					\
 
 OBJPRINTF=	$(SRCPRINTF:.c=.o)
 
-OBJ	=	 $(SRC:.c=.o)
+OBJ	=	$(SRC:.c=.o)
 
 NAME	= 	tetris
 
-CC	= 	clang -F4 -g -I./inc
+CC	= 	@ clang -F4 -g -I./inc
 
-CFLAGS	= 	-W  -Wall -Wextra  # -Werror
+eCFLAGS	= 	-W  -Wall -Wextra -Werror
 
 $(NAME): 	$(OBJ) $(OBJPRINTF)
-		ar rc libprintf.a $(OBJPRINTF)
-		ranlib libprintf.a
+		@ tput setaf 2
+		@ echo "[OK] > Linking"
+		@ echo "Making the printf library..."
+		@ echo "[OK] > Done"
+		@ ar rc libprintf.a $(OBJPRINTF)
+		@ ranlib libprintf.a
 		@ gcc $(OBJ) -o $(NAME) libprintf.a -lncurses
 		@ echo -e "\033[1;32m \t \t \t ♩♪♫ TETRIS\033[0;32m®\033[1;32m Compiled Sucesfully ♩♪♫\033[0m "
-		#@ aplay .tetris.wav &
 
 all:		$(NAME)
+		@#@ aplay .tetris.wav &
+
 
 clean:
-		rm -f $(OBJ)
-		rm -f $(OBJPRINTF)
+		@ tput setaf 2
+		@ echo "[OK] > Deleting .o"
+		@ rm -f $(OBJ)
+		@ rm -f $(OBJPRINTF)
+		@ tput setaf 7
 
 fclean:		clean
-		rm -f $(NAME)
-		rm -f libprintf.a
+		@ tput setaf 2
+		@ echo "[OK] > Deleting binaries"
+		@ rm -f $(NAME)
+		@ rm -f libprintf.a
+		@ tput setaf 7OA
 
 re:		fclean all
 
 .c.o:
 		@ $(CC) -c $< -o $@
-		@ tput setaf 5
+		@ tput setaf 2
 		@ echo -e "[OK] > $<\t\t"
 		@ tput setaf 7
