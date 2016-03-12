@@ -5,7 +5,7 @@
 ** Login   <peau_c@epitech.net>
 **
 ** Started on  Tue Mar  1 14:42:41 2016 Clement Peau
-** Last update Tue Mar  8 18:18:38 2016 Clement Peau
+** Last update Sat Mar 12 13:16:48 2016 Clement Peau
 */
 
 #include "tetris.h"
@@ -33,4 +33,6 @@ void	check_size_error(t_tetriminos *list, char *filename)
 	}
       i++;
     }
+  if (list->color > 7)
+    list->is_error = 1;
 }

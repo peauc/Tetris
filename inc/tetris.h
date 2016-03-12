@@ -5,7 +5,7 @@
 ** Login   <thoma_c@epitech.net>
 **
 ** Started on  Wed Feb 24 15:30:55 2016 Clement Thomas
-** Last update Fri Mar 11 15:56:28 2016 Clement Peau
+** Last update Sat Mar 12 14:32:50 2016 Clement Peau
 */
 
 #ifndef TETRIS_H_
@@ -20,6 +20,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <time.h>
+# include <stropts.h>
 
 /*
 **PERSONNAL HEADERS
