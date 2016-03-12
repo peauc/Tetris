@@ -5,7 +5,7 @@
 ** Login   <peau_c@epitech.net>
 **
 ** Started on  Fri Mar  4 12:51:48 2016 Clement Peau
-** Last update Sat Mar 12 14:34:01 2016 Clement Peau
+** Last update Sat Mar 12 14:59:00 2016 Clement Peau
 */
 
 #ifndef _OPTION_H_
