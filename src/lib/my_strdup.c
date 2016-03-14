@@ -1,4 +1,3 @@
-
 /*
 ** my_strdup.c for lol in /home/peau_c/rendu/PSU/PSU_2015_tetris
 **
@@ -6,7 +5,7 @@
 ** Login   <peau_c@epitech.net>
 **
 ** Started on  Sat Mar  5 14:00:59 2016 Clement Peau
-** Last update Mon Mar  7 17:19:05 2016 Clement Peau
+** Last update Mon Mar 14 13:16:35 2016 Clement Peau
 */
 
 #include "tetris.h"

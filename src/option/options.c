@@ -5,7 +5,7 @@
 ** Login   <peau_c@epitech.net>
 **
 ** Started on  Fri Mar  4 12:31:47 2016 Clement Peau
-** Last update Sat Mar 12 14:46:43 2016 Clement Peau
+** Last update Mon Mar 14 15:47:00 2016 Clement Peau
 */
 
 #include "tetris.h"
@@ -17,7 +17,7 @@ int	load_default_info(t_game *game)
   game->debug = 0;
   game->help = 0;
   game->next = 0;
-  game->level = 1;
+   game->level = 1;
   game->size[0] = 10;
   game->size[1] = 20;
   return (0);
@@ -30,7 +30,6 @@ void	cannon_mode(int mode)
   int	readed;
   char	c;
 
-  printf("coucou\n");
   readed = 0;
   c = 0;
   if (ioctl(0, TCGETS, &old) < 0 ||
@@ -42,23 +41,16 @@ void	cannon_mode(int mode)
   if (ioctl(0, TCSETS, &new) < 0)
     return ;
   while ((readed = read(0, &c, 1)) < 1);
-  printf("readed\n");
+  if (ioctl(0, TCSETS, &old) < 0)
+    return ;
 }
 
 int	options(t_game *game, char **av)
 {
   load_default_info(game);
-  if (one_word_options(game, av) == 1)
-    {
-      help_mode(game, av[0]);
-      return (1);
-    }
-  if (two_word_options(game, av) == 1)
-    {
-      help_mode(game, av[0]);
-      return (1);
-    }
-  if (game->help == 1)
+  if ((two_word_options(game, av) == 1) ||
+      (game->help == 1) ||
+      (one_word_options(game, av) == 1))
     {
       help_mode(game, av[0]);
       return (1);

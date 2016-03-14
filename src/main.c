@@ -1,4 +1,3 @@
-
 /*
 ** main.c for main in /home/thoma_c/rendu/PSU_2015_tetris/src
 **
@@ -6,12 +5,12 @@
 ** Login   <thoma_c@epitech.net>
 **
 ** Started on  Wed Feb 24 15:30:25 2016 Clement Thomas
-** Last update Sat Mar 12 16:27:06 2016 Clement Peau
+** Last update Mon Mar 14 15:44:13 2016 Clement Peau
 */
 
 #include "tetris.h"
 
-int             main(int argc, char **argv)
+int		main(int argc, char **argv)
 {
   printf("REMETRE LE WERROR AVANT DE PUSH ET LE TETRIS\n");
   t_game        game;
@@ -22,7 +21,6 @@ int             main(int argc, char **argv)
   /* argc = argc; */
   /* argv = argv; */
   game.list = parsing();
-  options(&game, argv);
   options(&game, argv);
   data_board_initialize(&board, game.list, &game);
   srand(time(NULL));

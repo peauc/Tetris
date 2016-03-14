@@ -5,7 +5,7 @@
 ** Login   <peau_c@epitech.net>
 **
 ** Started on  Fri Mar  4 19:21:02 2016 Clement Peau
-** Last update Fri Mar 11 16:38:21 2016 Clement Peau
+** Last update Mon Mar 14 15:38:55 2016 Clement Peau
 */
 
 #include "options.h"
@@ -37,10 +37,10 @@ char	**initialize_keys()
     return (NULL);
   my_strcpy(keys[KEY_PAUSE], " ");
   my_strcpy(keys[KEY_QUIT], "q");
-  if ((keys[KEY_TURN] = tigetstr("kcuu1")) == 0 ||
-      (keys[KEY_DROP] = tigetstr("kcud1")) == 0 ||
-      (keys[LEFT_KEY] = tigetstr("kcub1")) == 0 ||
-      (keys[RIGHT_KEY] = tigetstr("kcuf1")) == 0)
+  if (((keys[KEY_TURN] = my_strdup(tigetstr("kcuu1"))) == NULL) ||
+      ((keys[KEY_DROP] = my_strdup(tigetstr("kcud1"))) == NULL) ||
+      ((keys[LEFT_KEY] = my_strdup(tigetstr("kcub1"))) == NULL) ||
+      ((keys[RIGHT_KEY] = my_strdup(tigetstr("kcuf1"))) == NULL))
     return (NULL);
   return (keys);
 }
