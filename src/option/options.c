@@ -5,7 +5,7 @@
 ** Login   <peau_c@epitech.net>
 **
 ** Started on  Fri Mar  4 12:31:47 2016 Clement Peau
-** Last update Mon Mar 14 15:47:00 2016 Clement Peau
+** Last update Wed Mar 16 16:12:42 2016 Clement Peau
 */
 
 #include "tetris.h"
@@ -49,8 +49,12 @@ int	options(t_game *game, char **av)
 {
   load_default_info(game);
   if ((two_word_options(game, av) == 1) ||
-      (game->help == 1) ||
-      (one_word_options(game, av) == 1))
+      (one_word_options(game, av) == 1) ||
+      (param_checker(game, av) == 1))
+    return (write(2, "Wrong parameter --help for usage\n", 33) - 32);
+
+
+  if (game->help == 1)
     {
       help_mode(game, av[0]);
       return (1);

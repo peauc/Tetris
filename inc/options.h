@@ -5,7 +5,7 @@
 ** Login   <peau_c@epitech.net>
 **
 ** Started on  Fri Mar  4 12:51:48 2016 Clement Peau
-** Last update Sat Mar 12 14:59:00 2016 Clement Peau
+** Last update Wed Mar 16 15:37:29 2016 Clement Peau
 */
 
 #ifndef _OPTION_H_
@@ -60,7 +60,11 @@ typedef struct	s_pointer
 */
 int	two_word_options(t_game *, char **);
 int	one_word_options(t_game *, char **);
+int	my_strcmp_modified_one(char *, char *);
+int	my_strcmp_modified_two(char *, char *);
 int	options(t_game *, char **);
+char	**load_dico_one();
+char	**load_dico_two();
 char	**initialize_keys();
 void	debug_mode(t_game *);
 void	aff_tetri(t_tetriminos *);
@@ -71,6 +75,7 @@ void	free_fct_pointer(t_pointer *);
 /*
 ** FUNCTION POINTER
 */
+int	param_checker(t_game *, char **);
 int	debug_activator(t_game *, char **, int);
 int	next_desactivator(t_game *, char **, int);
 int	quit_key_modifier(t_game *, char **, int);

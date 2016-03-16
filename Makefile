@@ -5,13 +5,17 @@
 ## Login   <peau_c@epitech.net>
 ##
 ## Started on  Mon Jan 18 14:44:16 2016 Clement Peau
-## Last update Sat Mar 12 15:53:27 2016 Clement Peau
+## Last update Wed Mar 16 15:34:06 2016 Clement Peau
 ##
 
+RELEASE	=	no
+
+POC	=	yes
 
 SRC	=	src/main.c					\
 		src/error.c					\
 		src/function_free.c				\
+		src/option/param_checker.c			\
 		src/option/fonction_pointer.c			\
 		src/option/help_mode.c				\
 		src/option/debug_mode.c				\
@@ -62,9 +66,17 @@ OBJ	=	$(SRC:.c=.o)
 
 NAME	= 	tetris
 
-CC	= 	@ clang -F4 -g -I./inc
+ifeq ($(RELEASE), yes)
+	CFLAGS	= -W  -Wall -Wextra -Werror
+else
+	CFLAGS	= -W -Wall -Wextra -Werror -g -D -F4
+endif
 
-eCFLAGS	= 	-W  -Wall -Wextra -Werror
+ifeq ($(POC), yes)
+	CC	= 	@ clang -F4 -g -I./inc
+else
+	CC	=	@ gcc
+endif
 
 $(NAME): 	$(OBJ) $(OBJPRINTF)
 		@ tput setaf 2
@@ -91,13 +103,14 @@ fclean:		clean
 		@ tput setaf 2
 		@ echo "[OK] > Deleting binaries"
 		@ rm -f $(NAME)
+		@ echo "[OK] > Deleting printf library"
 		@ rm -f libprintf.a
 		@ tput setaf 7OA
 
 re:		fclean all
 
 .c.o:
-		@ $(CC) -c $< -o $@
+		@ $(CC) -Iinc/ -c $< -o $@
 		@ tput setaf 2
 		@ echo -e "[OK] > $<\t\t"
 		@ tput setaf 7
