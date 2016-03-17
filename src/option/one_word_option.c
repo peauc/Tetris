@@ -5,12 +5,12 @@
 ** Login   <peau_c@epitech.net>
 **
 ** Started on  Sun Mar  6 19:03:42 2016 Clement Peau
-** Last update Fri Mar 11 15:58:56 2016 Clement Peau
+** Last update Wed Mar 16 16:13:28 2016 Clement Peau
 */
 
 #include "options.h"
 
-static	int	my_strcmp_modified(char *dico, char *test)
+int	my_strcmp_modified_one(char *dico, char *test)
 {
   int		i;
 
@@ -24,13 +24,7 @@ static	int	my_strcmp_modified(char *dico, char *test)
   return (0);
 }
 
-int		joyeuse_fonction(t_game *game, char **av, int i)
-{
-  my_printf("je suis une joyeuse_fonction\n");
-  return (0);
-}
-
-static char	**load_dico()
+char	**load_dico_one()
 {
   int		i;
   char		**dico;
@@ -85,7 +79,7 @@ int		one_word_options(t_game *game, char **av)
   int		j;
 
   i = 1;
-  if  ((fct.dico = load_dico()) == NULL ||
+  if  ((fct.dico = load_dico_one()) == NULL ||
        load_fonction_ptr(&fct) == 1)
     return (1);
   while (av[i])
@@ -93,9 +87,9 @@ int		one_word_options(t_game *game, char **av)
       j = 0;
       while (fct.dico[j] != NULL)
 	{
-	  if (my_strcmp_modified(fct.dico[j], av[i]) == 0)
+	  if (my_strcmp_modified_one(fct.dico[j], av[i]) == 0)
 	    if ((fct.pointer[j](game, av, i)) == 1)
-	      return (write(2, "Wrong parameter\n", 16) - 15);
+	      return (1);
 	  j++;
 	}
       i++;
