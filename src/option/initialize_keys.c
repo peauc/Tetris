@@ -5,7 +5,7 @@
 ** Login   <peau_c@epitech.net>
 **
 ** Started on  Fri Mar  4 19:21:02 2016 Clement Peau
-** Last update Thu Mar 17 13:27:25 2016 Clement Peau
+** Last update Thu Mar 17 13:56:26 2016 Clement Peau
 */
 
 #include "options.h"
@@ -31,10 +31,9 @@ char	**initialize_keys()
   int	i;
 
   i = 0;
-  if (setupterm(NULL, 0, &i) == -1)
-    return (NULL);
   if ((keys = malloc(sizeof(char *) * (NB_KEYS + 1))) == NULL ||
-      malloc_every_field(keys, NB_KEYS) == 1)
+      malloc_every_field(keys, NB_KEYS) == 1 ||
+      setupterm(NULL, 0, &i) == -1)
     return (NULL);
   my_strcpy(keys[KEY_PAUSE], " ");
   my_strcpy(keys[KEY_QUIT], "q");

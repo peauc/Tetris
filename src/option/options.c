@@ -5,7 +5,7 @@
 ** Login   <peau_c@epitech.net>
 **
 ** Started on  Fri Mar  4 12:31:47 2016 Clement Peau
-** Last update Thu Mar 17 13:30:24 2016 Clement Peau
+** Last update Thu Mar 17 13:57:49 2016 Clement Peau
 */
 
 #include "tetris.h"
@@ -48,13 +48,11 @@ void	cannon_mode(int mode)
 int	options(t_game *game, char **av)
 {
 
-  if ((two_word_options(game, av) == 1) ||
-      (load_default_info(game) == 1) ||
+  if ((load_default_info(game) == 1) ||
+      (two_word_options(game, av) == 1) ||
       (one_word_options(game, av) == 1) ||
       (param_checker(game, av) == 1))
     return (write(2, "Wrong parameter --help for usage\n", 33) - 32);
-
-
   if (game->help == 1)
     {
       help_mode(game, av[0]);

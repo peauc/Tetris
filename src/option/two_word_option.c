@@ -5,7 +5,7 @@
 ** Login   <peau_c@epitech.net>
 **
 ** Started on  Tue Mar  8 01:27:47 2016 Clement Peau
-** Last update Wed Mar 16 16:13:51 2016 Clement Peau
+** Last update Thu Mar 17 13:41:42 2016 Clement Peau
 */
 
 #include "options.h"
@@ -86,6 +86,7 @@ int	two_word_options(t_game *game, char **av)
     {
       while (fct.dico[j])
 	{
+	  printf("dico[j] = %s av[%d] = %s\n", fct.dico[j], i, av[i]);
 	  if (my_strcmp_modified_two(fct.dico[j], av[i]) == 0)
 	    if ((fct.pointer[j](game, av, i)) == 1)
 	      return (1);

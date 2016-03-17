@@ -5,23 +5,21 @@
 ** Login   <thoma_c@epitech.net>
 **
 ** Started on  Wed Feb 24 15:30:25 2016 Clement Thomas
-** Last update Wed Mar 16 14:37:17 2016 Clement Peau
+** Last update Thu Mar 17 13:54:07 2016 Clement Peau
 */
 
 #include "tetris.h"
 
 int		main(int argc, char **argv)
 {
-  /* printf("REMETRE LE WERROR AVANT DE PUSH ET LE TETRIS\n"); */
   t_game        game;
   char          **keys;
   WINDOW        *win;
   t_board       board;
 
-  /* argc = argc; */
-  /* argv = argv; */
-  game.list = parsing();
-  options(&game, argv);
+  if ((game.list = parsing()) == NULL ||
+      options(&game, argv) == 1)
+    return (1);
   /* data_board_initialize(&board, game.list, &game); */
   /* srand(time(NULL)); */
   /* if ((aff_tetris(0, &board, game.list, &game)) == -1) */

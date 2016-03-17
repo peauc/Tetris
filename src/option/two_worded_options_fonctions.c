@@ -5,7 +5,7 @@
 ** Login   <peau_c@epitech.net>
 **
 ** Started on  Tue Mar  8 02:37:33 2016 Clement Peau
-** Last update Fri Mar 11 14:41:14 2016 Clement Peau
+** Last update Thu Mar 17 13:58:06 2016 Clement Peau
 */
 
 #include "options.h"
@@ -49,7 +49,7 @@ int	drop_key_modifier(t_game *game, char **av, int i)
 {
   if (av[i + 1] == NULL)
     return (1);
-  free(game->array[KEY_DROP]);
+  free(game->array[KEY_TURN]);
   game->array[KEY_DROP] = my_strdup(av[i + 1]);
   return (0);
 }
