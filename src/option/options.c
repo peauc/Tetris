@@ -5,7 +5,7 @@
 ** Login   <peau_c@epitech.net>
 **
 ** Started on  Fri Mar  4 12:31:47 2016 Clement Peau
-** Last update Thu Mar 17 13:57:49 2016 Clement Peau
+** Last update Thu Mar 17 14:30:49 2016 Clement Peau
 */
 
 #include "tetris.h"
@@ -47,7 +47,6 @@ void	cannon_mode(int mode)
 
 int	options(t_game *game, char **av)
 {
-
   if ((load_default_info(game) == 1) ||
       (two_word_options(game, av) == 1) ||
       (one_word_options(game, av) == 1) ||

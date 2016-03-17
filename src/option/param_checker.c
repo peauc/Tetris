@@ -5,7 +5,7 @@
 ** Login   <peau_c@epitech.net>
 **
 ** Started on  Wed Mar 16 15:06:50 2016 Clement Peau
-** Last update Wed Mar 16 16:18:36 2016 Clement Peau
+** Last update Thu Mar 17 14:29:57 2016 Clement Peau
 */
 
 #include "options.h"
@@ -24,7 +24,7 @@ int	param_checker(t_game *game, char **av)
     return (1);
   while (av[i - 1] != NULL && av[i])
     {
-      if (j == 8 && k == 10)
+      if (j == 8 && k == 11)
 	return (1);
       if (my_strcmp_modified_two(two[j], av[i]) == 0)
 	{
