@@ -5,14 +5,14 @@
 ** Login   <thoma_c@epitech.net>
 **
 ** Started on  Wed Feb 24 15:30:25 2016 Clement Thomas
-** Last update Mon Mar 14 15:44:13 2016 Clement Peau
+** Last update Wed Mar 16 14:37:17 2016 Clement Peau
 */
 
 #include "tetris.h"
 
 int		main(int argc, char **argv)
 {
-  printf("REMETRE LE WERROR AVANT DE PUSH ET LE TETRIS\n");
+  /* printf("REMETRE LE WERROR AVANT DE PUSH ET LE TETRIS\n"); */
   t_game        game;
   char          **keys;
   WINDOW        *win;
@@ -22,9 +22,9 @@ int		main(int argc, char **argv)
   /* argv = argv; */
   game.list = parsing();
   options(&game, argv);
-  data_board_initialize(&board, game.list, &game);
-  srand(time(NULL));
-  if ((aff_tetris(0, &board, game.list, &game)) == -1)
-    write(2, "The screen size must be highter\n", 32);
+  /* data_board_initialize(&board, game.list, &game); */
+  /* srand(time(NULL)); */
+  /* if ((aff_tetris(0, &board, game.list, &game)) == -1) */
+  /*   write(2, "The screen size must be highter\n", 32); */
   return (0);
 }

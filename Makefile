@@ -5,7 +5,7 @@
 ## Login   <peau_c@epitech.net>
 ##
 ## Started on  Mon Jan 18 14:44:16 2016 Clement Peau
-## Last update Wed Mar 16 15:34:06 2016 Clement Peau
+## Last update Thu Mar 17 13:33:25 2016 Clement Peau
 ##
 
 RELEASE	=	no
@@ -73,12 +73,13 @@ else
 endif
 
 ifeq ($(POC), yes)
-	CC	= 	@ clang -F4 -g -I./inc
+	CC	= 	@ clang -F4 -g
 else
 	CC	=	@ gcc
 endif
 
 $(NAME): 	$(OBJ) $(OBJPRINTF)
+		@ echo "RELEASE -> $(RELEASE)"
 		@ tput setaf 2
 		@ echo "[OK] > Linking"
 		@ echo "Making the printf library..."
