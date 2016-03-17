@@ -5,7 +5,7 @@
 ** Login   <thoma_c@epitech.net>
 **
 ** Started on  Mon Mar  7 18:30:01 2016 Clement Thomas
-** Last update Fri Mar 11 17:59:16 2016 Clement Thomas
+** Last update Sat Mar 12 16:55:27 2016 Clement Thomas
 */
 
 #include "tetris.h"
@@ -130,5 +130,4 @@ void	aff_tab_game(t_board *board)
       i++;
       y++;
     }
-  wrefresh(board->game);
 }

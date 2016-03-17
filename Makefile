@@ -5,12 +5,12 @@
 ## Login   <peau_c@epitech.net>
 ##
 ## Started on  Mon Jan 18 14:44:16 2016 Clement Peau
-## Last update Thu Mar 17 13:33:25 2016 Clement Peau
+## Last update Thu Mar 17 14:12:21 2016 Clement Thomas
 ##
 
-RELEASE	=	no
+RELEASE	=	yes
 
-POC	=	yes
+POC	=	no
 
 SRC	=	src/main.c					\
 		src/error.c					\
@@ -52,6 +52,7 @@ SRC	=	src/main.c					\
 		src/next_tetriminos.c				\
 		src/aff_next.c					\
 		src/tab_game.c					\
+		src/moove_down_tetri.c				\
 
 SRCPRINTF=	src/printf/my_flagn.c				\
 		src/printf/my_putnbrs.c				\
@@ -79,7 +80,6 @@ else
 endif
 
 $(NAME): 	$(OBJ) $(OBJPRINTF)
-		@ echo "RELEASE -> $(RELEASE)"
 		@ tput setaf 2
 		@ echo "[OK] > Linking"
 		@ echo "Making the printf library..."
