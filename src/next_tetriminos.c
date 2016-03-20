@@ -5,7 +5,7 @@
 ** Login   <thoma_c@epitech.net>
 **
 ** Started on  Sun Mar  6 16:42:48 2016 Clement Thomas
-** Last update Sat Mar 12 16:31:44 2016 Clement Peau
+** Last update Thu Mar 17 16:35:42 2016 Clement Thomas
 */
 
 #include "tetris.h"
@@ -37,26 +37,29 @@ t_tetriminos	*which_tetriminos(t_tetriminos *list, int nb_tetri)
   return (tmp);
 }
 
-void		aff_next_tetri(WINDOW *new_win, t_tetriminos *nex, int nb)
+void		aff_next_tetri(WINDOW *new_win, t_tetriminos *nex,
+			       int nb, t_board *board)
 {
   int		i;
   int		j;
-  t_tetriminos	*tmp;
 
   i = 0;
-  tmp = which_tetriminos(nex, nb);
-  init_pair(7, tmp->color, COLOR_BLACK);
-  while (tmp->tetriminos[i] != NULL)
+  init_pair(7, nex->color, COLOR_BLACK);
+  wclear(board->next);
+  next_tetri(board->next, nex);
+  while (nex->tetriminos[i] != NULL)
     {
       j = 0;
-      while (tmp->tetriminos[i][j])
+      while (nex->tetriminos[i][j])
   	{
 	  wrefresh(new_win);
   	  wattron(new_win, COLOR_PAIR(7));
-  	  mvwprintw(new_win, i + 2, j + 4, "%c", tmp->tetriminos[i][j]);
+  	  mvwprintw(new_win, i + 2, j + 4, "%c", nex->tetriminos[i][j]);
 	  wattroff(new_win, COLOR_PAIR(7));
   	  j++;
   	}
       i++;
     }
+  wrefresh(new_win);
+  usleep(99999);
 }

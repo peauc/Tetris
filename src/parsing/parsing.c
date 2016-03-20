@@ -5,7 +5,7 @@
 ** Login   <peau_c@epitech.net>
 **
 ** Started on  Mon Feb 29 18:47:52 2016 Clement Peau
-** Last update Thu Mar 17 14:37:15 2016 Clement Peau
+** Last update Sun Mar 20 15:36:13 2016 Clement Peau
 */
 
 #include "tetris.h"
@@ -39,6 +39,6 @@ t_tetriminos	*parsing()
   if ((list = export_files()) == NULL)
     return (NULL);
   if (list->next == NULL)
-    printf("bite\n");
+    return (NULL);
   return (list);
 }

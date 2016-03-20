@@ -5,7 +5,7 @@
 ** Login   <thoma_c@epitech.net>
 **
 ** Started on  Wed Feb 24 15:30:25 2016 Clement Thomas
-** Last update Sat Mar 12 16:38:58 2016 Clement Peau
+** Last update Thu Mar 17 16:21:04 2016 Clement Thomas
 */
 
 #include "tetris.h"
@@ -85,7 +85,6 @@ void	aff_board(t_board *board, WINDOW *new_win)
   mvwprintw(new_win, 6, 1, " Level");
   mvwprintw(new_win, 6, 17, "%d", board->level);
   mvwprintw(new_win, 8, 1, " Timer:");
-  wrefresh(new_win);
 }
 
 int		aff_tetris(int ch, t_board *board, t_tetriminos *list,
@@ -107,6 +106,7 @@ int		aff_tetris(int ch, t_board *board, t_tetriminos *list,
   board->data_board = subwin(win, 11, 23, 6, 1);
   board->next = subwin(win, 7, 12, 1, 48);
   board->game = subwin(win, board->size_y + 2, board->size_x + 2, 0, 35);
+  board->next_tetri = which_tetriminos(game->list, nb_tetriminos(game->list));
   while (2)
     {
       if ((screen_size(win)) == 1)
@@ -118,6 +118,9 @@ int		aff_tetris(int ch, t_board *board, t_tetriminos *list,
       else
 	my_screen(win, board, list, game);
       refresh();
+      wrefresh(board->data_board);
+      wrefresh(board->next);
+      wrefresh(board->game);
     }
   endwin();
   return (1);

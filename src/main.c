@@ -5,7 +5,7 @@
 ** Login   <thoma_c@epitech.net>
 **
 ** Started on  Wed Feb 24 15:30:25 2016 Clement Thomas
-** Last update Thu Mar 17 13:54:07 2016 Clement Peau
+** Last update Thu Mar 17 14:00:10 2016 Clement Thomas
 */
 
 #include "tetris.h"
@@ -20,9 +20,9 @@ int		main(int argc, char **argv)
   if ((game.list = parsing()) == NULL ||
       options(&game, argv) == 1)
     return (1);
-  /* data_board_initialize(&board, game.list, &game); */
-  /* srand(time(NULL)); */
-  /* if ((aff_tetris(0, &board, game.list, &game)) == -1) */
-  /*   write(2, "The screen size must be highter\n", 32); */
+  data_board_initialize(&board, game.list, &game);
+  srand(time(NULL));
+  if ((aff_tetris(0, &board, game.list, &game)) == -1)
+    write(2, "The screen size must be highter\n", 32);
   return (0);
 }
