@@ -5,7 +5,7 @@
 ** Login   <peau_c@epitech.net>
 **
 ** Started on  Fri Mar  4 12:31:47 2016 Clement Peau
-** Last update Thu Mar 17 14:30:49 2016 Clement Peau
+** Last update Thu Mar 17 15:57:54 2016 Clement Peau
 */
 
 #include "tetris.h"
@@ -40,7 +40,7 @@ void	cannon_mode(int mode)
   new.c_cc[VMIN] = 1;
   if (ioctl(0, TCSETS, &new) < 0)
     return ;
-  while ((readed = read(0, &c, 1)) < 1);
+  while ((readed = read(0, &c, 1) < 1));
   if (ioctl(0, TCSETS, &old) < 0)
     return ;
 }
